@@ -1,6 +1,6 @@
 ## How to setup project
 ``` 
-1. git clone https://github.com/gowthamand/react-login-register-crud
+1. git clone https://github.com/ParthKhanna07/teacher-pal.git
 
 2. npm install
 
