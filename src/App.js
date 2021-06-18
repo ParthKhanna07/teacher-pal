@@ -8,6 +8,7 @@ import Register from "./pages/register";
 import NotFound from "./pages/notfound";
 
 import Home from "./pages/home";
+import Start from "./pages/start";
 
 class App extends Component {
 
@@ -16,7 +17,8 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <Switch>
-                        <Route exact path='/' component={Login} />
+                        <Route exact path="/" component={Start}/>
+                        <Route exact path='/login' component={Login} />
                         <Route path="/home" component={Home}></Route>
                         <Route path='/dashboard' component={Dashboard} />
                         <Route path='/index' component={Index}/>

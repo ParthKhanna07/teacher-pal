@@ -12,9 +12,11 @@ export default class Login extends Component {
         authError: false,
         isLoading: false,
         location: {},
+        
     };
 
     handleEmailChange = event => {
+        
         this.setState({email: event.target.value});
     };
     handlePwdChange = event => {
@@ -24,11 +26,13 @@ export default class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.setState({isLoading: true});
-        const url = 'https://gowtham-rest-api-crud.herokuapp.com/login';
+
+        const url='http://localhost:8000/api/login/';
+        
         const email = this.state.email;
         const password = this.state.password;
         let bodyFormData = new FormData();
-        bodyFormData.set('email', email);
+        
         bodyFormData.set('password', password);
         axios.post(url, bodyFormData)
             .then(result => {
@@ -36,6 +40,8 @@ export default class Login extends Component {
                     localStorage.setItem('token', result.data.token);
                     this.setState({redirect: true, isLoading: false});
                     localStorage.setItem('isLoggedIn', true);
+                    localStorage.setItem('role',result.data.role);
+                    console.log(localStorage.getItem('role'));
                 }
             })
             .catch(error => {
