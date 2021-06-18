@@ -14,7 +14,7 @@ export default class Login extends Component {
         location: {},
         
     };
-
+    
     handleEmailChange = event => {
         
         this.setState({email: event.target.value});
@@ -26,22 +26,29 @@ export default class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.setState({isLoading: true});
-
+        const options = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+          };
         const url='http://localhost:8000/api/login/';
         
         const email = this.state.email;
         const password = this.state.password;
         let bodyFormData = new FormData();
-        
+        bodyFormData.set('email', email);
         bodyFormData.set('password', password);
         axios.post(url, bodyFormData)
             .then(result => {
+                console.log("hey");
                 if (result.data.status) {
+                    console.log("here");
                     localStorage.setItem('token', result.data.token);
-                    this.setState({redirect: true, isLoading: false});
-                    localStorage.setItem('isLoggedIn', true);
                     localStorage.setItem('role',result.data.role);
                     console.log(localStorage.getItem('role'));
+                    this.setState({redirect: true, isLoading: false});
+                    localStorage.setItem('isLoggedIn', true);
+                    
                 }
             })
             .catch(error => {
