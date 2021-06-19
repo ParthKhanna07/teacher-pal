@@ -25,7 +25,7 @@ export class AllBatches extends Component {
     };
     // Typical usage (don't forget to compare props):
     console.log(this.props);
-    const url = "http://localhost:8000/api/batch" + this.props.location.search;
+    const url = "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
     console.log(url);
 
     axios
