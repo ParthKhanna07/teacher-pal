@@ -1,22 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+
 export class AllBatches extends Component {
-  
   state = {
     name: "",
     meet: "",
-    created_by:  localStorage.getItem("userid"),
-    role: localStorage.getItem("user"),
+    created_by: localStorage.getItem("userid"),
+    role: localStorage.getItem("role"),
   };
-  handlehandleNameChange = (event) => {
+  handleNameChange = (event) => {
     this.setState({ name: event.target.value });
   };
-  handlehandleMeetChange = (event) => {
+  handleMeetChange = (event) => {
     this.setState({ meet: event.target.value });
   };
-
-
 
   handleGet = (event) => {
     event.preventDefault();
@@ -29,7 +27,7 @@ export class AllBatches extends Component {
     console.log(this.props);
     const url = "http://localhost:8000/api/batch" + this.props.location.search;
     console.log(url);
-    
+
     axios
       .get(url, { headers })
       .then((result) => {
@@ -50,21 +48,28 @@ export class AllBatches extends Component {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     };
     // Typical usage (don't forget to compare props):
-    console.log(this.props);
- 
+    //console.log(this.props);
+
     const url = "http://localhost:8000/api/batch" + this.props.location.search;
-    console.log(url);
-    const name=this.state.name;
-    const meet=this.state.meet;
-    const created_by=this.state.created_by;
+    //console.log(url);
+    const name = this.state.name;
+    const meet = this.state.meet;
+    console.log(name,meet);
+    //const created_by = this.state.created_by;
     let bodyFormData = new FormData();
 
     bodyFormData.set("name", name);
     bodyFormData.set("meet_link", meet);
-    bodyFormData.set("created_by", created_by);
-    console.log(bodyFormData);
+    // const body=JSON.stringify({
+    //   name:this.state.name,
+    //   meet_link:this.state.meet,
+    // })
+    //console.log(body);
+    //bodyFormData.set("created_by", created_by);
+    //console.log("cretaed", created_by);
+    //console.log(typeof meet);
     axios
-      .post(url,bodyFormData, { headers })
+      .post(url, bodyFormData, { headers })
       .then((result) => {
         console.log(result.data);
       })
@@ -72,7 +77,6 @@ export class AllBatches extends Component {
         console.log(error);
       });
   };
- 
 
   render() {
     //console.log(this.props);
@@ -113,8 +117,6 @@ export class AllBatches extends Component {
                   </div>
                 </div>
 
-                
-
                 <div className="form-group">
                   <button className="btn btn-primary btn-block" type="submit">
                     Add batch
@@ -122,11 +124,13 @@ export class AllBatches extends Component {
                 </div>
               </form>
               <div className="form-group">
-                  <button className="btn btn-primary btn-block" onClick={this.handleGet}>
-                    Show Batches
-                  </button>
-                </div>
-              
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={this.handleGet}
+                >
+                  Show Batches
+                </button>
+              </div>
             </div>
           </div>
         </div>
