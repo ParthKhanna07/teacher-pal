@@ -9,6 +9,9 @@ import NotFound from "./pages/notfound";
 
 import Home from "./pages/home";
 import Start from "./pages/start";
+import Join from "./pages/join";
+import Batch from "./pages/batchList";
+import AllBatches from './pages/allBatches';
 
 class App extends Component {
 
@@ -18,7 +21,11 @@ class App extends Component {
                 <Router>
                     <Switch>
                         <Route exact path="/" component={Start}/>
+                        
                         <Route exact path='/login' component={Login} />
+                        <Route path="/join/:id" component={Join}/>
+                        <Route path="/batch" component={AllBatches}/>
+                        <Route path="/batchlist/:id" component={Batch}/>
                         <Route path="/home" component={Home}></Route>
                         <Route path='/dashboard' component={Dashboard} />
                         <Route path='/index' component={Index}/>

@@ -30,7 +30,7 @@ export default class Register extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ isLoading: true });
-    const url = "http://localhost:8000/api/signup/";
+    const url = "http://localhost:8000/api/signup";
     const email = this.state.email;
     const role = this.state.role;
     const password = this.state.password;
