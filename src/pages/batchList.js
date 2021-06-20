@@ -27,6 +27,7 @@ export class Batch extends Component {
       .then((result) => {
         console.log(result.data);
         this.setState({data:result.data})
+        console.log(this.state.data[0])
         
       })
       .catch((error) => {
@@ -41,7 +42,18 @@ export class Batch extends Component {
     return (
       <div>
         <h1>Hello {this.props.match.params.id}</h1>
-        <h2>{this.state.data[0]}</h2>
+        {this.state.data.map((val) => {
+          return (
+            <div className="card">
+              <h1>{val.name}</h1>
+              <p>{val.email}</p>
+
+              
+              
+            </div>
+          );
+        })}
+        
       </div>
       
     );
