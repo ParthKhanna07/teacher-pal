@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 export class Batch extends Component {
-    
+  state ={
+    data:[{}]
+  }
   componentDidMount() {
     const headers = {
         "Content-Type": "application/json",
@@ -12,6 +15,7 @@ export class Batch extends Component {
     const batch = this.props.match.params.id;
     const student = localStorage.getItem("userid");
     const batchid=parseInt(batch);
+  
     const url="http://localhost:8000/api/batch-students/"+batchid;
     console.log(url);
     let bodyFormData = new FormData();
@@ -22,6 +26,7 @@ export class Batch extends Component {
       .get(url,{ headers})
       .then((result) => {
         console.log(result.data);
+        this.setState({data:result.data})
         
       })
       .catch((error) => {
@@ -30,12 +35,15 @@ export class Batch extends Component {
       });
     
   }
+  
   render() {
     //console.log(this.props);
     return (
       <div>
         <h1>Hello {this.props.match.params.id}</h1>
+        <h2>{this.state.data[0]}</h2>
       </div>
+      
     );
   }
 }
