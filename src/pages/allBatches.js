@@ -8,6 +8,7 @@ export class AllBatches extends Component {
     meet: "",
     created_by: localStorage.getItem("userid"),
     role: localStorage.getItem("role"),
+    data: [],
   };
   handleNameChange = (event) => {
     this.setState({ name: event.target.value });
@@ -25,13 +26,15 @@ export class AllBatches extends Component {
     };
     // Typical usage (don't forget to compare props):
     console.log(this.props);
-    const url = "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
+    const url =
+      "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
     console.log(url);
 
     axios
       .get(url, { headers })
       .then((result) => {
         console.log(result.data);
+        this.setState({ data: result.data });
       })
       .catch((error) => {
         console.log(error);
@@ -54,7 +57,7 @@ export class AllBatches extends Component {
     //console.log(url);
     const name = this.state.name;
     const meet = this.state.meet;
-    console.log(name,meet);
+    console.log(name, meet);
     //const created_by = this.state.created_by;
     let bodyFormData = new FormData();
 
@@ -76,13 +79,14 @@ export class AllBatches extends Component {
       .catch((error) => {
         console.log(error);
       });
+      window.location.reload();
   };
 
   render() {
     //console.log(this.props);
     return (
       <div>
-        <h1>Hello {this.props.match.params.id}</h1>
+        
         <div className="container">
           <div className="card card-login mx-auto mt-5">
             <div className="card-header">Create Batch</div>
@@ -123,16 +127,29 @@ export class AllBatches extends Component {
                   </button>
                 </div>
               </form>
-              <div className="form-group">
-                <button
-                  className="btn btn-primary btn-block"
-                  onClick={this.handleGet}
-                >
-                  Show Batches
-                </button>
-              </div>
             </div>
+            <div className="form-group">
+              <button
+                className="btn btn-primary btn-block"
+                onClick={this.handleGet}
+              >
+                Show Batches
+                
+              </button>
+              
+            </div>
+           
           </div>
+          {this.state.data.map((val) => {
+                  return (
+                    <div className=" container cardly">
+                      <h3>Batch Name:{val.name}</h3>
+                      <h3>Created At: {val.created_at}</h3>
+                      <h3>Modified At:{val.modified_at}</h3>
+                      <h3>Meet Link: {val.meet_link}</h3>
+                    </div>
+                  );
+                })}
         </div>
       </div>
     );

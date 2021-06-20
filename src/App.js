@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import Index from "./pages/index";
+import "./App.css";
 
 import Register from "./pages/register";
 import NotFound from "./pages/notfound";

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export class Batch extends Component {
   state ={
-    data:[{}]
+    data:[]
   }
   componentDidMount() {
     const headers = {
@@ -27,7 +27,7 @@ export class Batch extends Component {
       .then((result) => {
         console.log(result.data);
         this.setState({data:result.data})
-        console.log(this.state.data[0])
+        console.log(this.state.data[0].student.full_name)
         
       })
       .catch((error) => {
@@ -40,13 +40,15 @@ export class Batch extends Component {
   render() {
     //console.log(this.props);
     return (
-      <div>
-        <h1>Hello {this.props.match.params.id}</h1>
+      <div className="container">
+        <br></br>
+        <h1>Batch {this.props.match.params.id}</h1>
+        <br></br>
         {this.state.data.map((val) => {
           return (
-            <div className="card">
-              <h1>{val.name}</h1>
-              <p>{val.email}</p>
+            <div className="card" >
+              <h3>Student Name:{val.student.full_name}</h3>
+              <h3>Student Email: {val.student.email}</h3>
 
               
               
