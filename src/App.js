@@ -13,6 +13,7 @@ import Start from "./pages/start";
 import Join from "./pages/join";
 import Batch from "./pages/batchList";
 import AllBatches from './pages/allBatches';
+import AttendanceDetail  from './pages/attendanceDetail';
 
 class App extends Component {
 
@@ -31,7 +32,9 @@ class App extends Component {
                         <Route path='/dashboard' component={Dashboard} />
                         <Route path='/index' component={Index}/>
                         <Route path='/register' component={Register} />
+                        <Route path="/attendancedetail/:id" component={AttendanceDetail} />
                         <Route path='*' component={NotFound} />
+                        
                     </Switch>
                 </Router>
             </div>

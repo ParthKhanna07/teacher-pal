@@ -13,6 +13,7 @@ export default class Register extends Component {
     isLoading: false,
     role: localStorage.getItem("user"),
   };
+  //if(localStorage.getItem("isLoggedIn")!=NULL & localStorage.getItem("isLoggedIn")==true)
   handleUsernameChange = (event) => {
     this.setState({ username: event.target.value });
   };

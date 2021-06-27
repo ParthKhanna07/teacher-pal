@@ -46,12 +46,16 @@ export class Batch extends Component {
         <br></br>
         {this.state.data.map((val) => {
           return (
-            <div className="card" >
+            <div>
+              <h3>Invite Students to the batch "http://localhost:3000/join/{this.props.match.params.id}"</h3>
+              <br></br>
+
+            <div className="batch-cardly" >
+              
               <h3>Student Name:{val.student.full_name}</h3>
               <h3>Student Email: {val.student.email}</h3>
-
               
-              
+            </div>
             </div>
           );
         })}

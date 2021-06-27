@@ -5,14 +5,16 @@ export class join extends Component {
   state ={
     redirect:false
   }
+  
   componentDidMount() {
-    const batch = this.props.match.params.id;
-    const student = localStorage.getItem("userid");
-    const batchid=parseInt(batch);
     if(localStorage.getItem('userid')==null){
       console.log("login first");
       this.setState({ redirect: true});
     }
+    const batch = this.props.match.params.id;
+    const student = localStorage.getItem("userid");
+    const batchid=parseInt(batch);
+   
     const headers = {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -34,6 +36,8 @@ export class join extends Component {
       })
       .catch((error) => {
         console.log(error);
+        console.log("login first");
+      this.setState({ redirect: true});
         
       });
     
@@ -48,7 +52,7 @@ export class join extends Component {
     return (
       <div>
         <div>
-        <h1>Hello {this.props.match.params.id}</h1>
+        <h1>You are added to batch:- {this.props.match.params.id}</h1>
           </div>
       
       {this.renderRedirect()}
