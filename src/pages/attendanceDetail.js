@@ -7,7 +7,8 @@ import moment from 'moment';
 export class AttendanceDetail extends Component {
     state = {
         date: new Date(),
-        data: []
+        data: [],
+        nodata: false
     }
     onChange = date => this.setState({ date })
 
@@ -54,16 +55,34 @@ export class AttendanceDetail extends Component {
         //bodyFormData.set("created_by", created_by);
         //console.log("cretaed", created_by);
         //console.log(typeof meet);
+
+        
         axios
             .post(url, bodyFormData, { headers })
             .then((result) => {
                 console.log(result);
-                
+                this.setState({nodata:false});
                 this.setState({ data: result.data });
                 console.log(result.data["total_attendance_requests"]);
             })
             .catch((error) => {
-                console.log(error);
+                if (error.response) {
+                    // The request was made and the server responded with a status code
+                    // that falls out of the range of 2xx
+                    console.log(error.response.data);
+                    this.setState({nodata:true});
+                    // console.log(error.response.status);
+                    // console.log(error.response.headers);
+                  } else if (error.request) {
+                    // The request was made but no response was received
+                    // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                    // http.ClientRequest in node.js
+                    console.log(error.request);
+                  } else {
+                    // Something happened in setting up the request that triggered an Error
+                    console.log('Error', error.message);
+                  }
+                  console.log(error.config);
             });
         //window.location.reload();
     };
@@ -94,8 +113,12 @@ export class AttendanceDetail extends Component {
 
 
                     </div>
-                    <h2>Total Attendence Request: {this.state.data["total_attendance_requests"]}</h2>
-
+                    <div>
+                        {this.state.nodata ?<div><h2>Total Attendence Request: 0</h2><br></br><h2>No attendence was taken on this date</h2></div> : <div><h2>Total Attendence Request: {this.state.data["total_attendance_requests"]}</h2></div>
+                        }
+                    </div>
+                    
+                        {this.state.nodata?<div></div>:<div>
                     {Object.keys(this.state.data).map((val,i,arr) => {
                         if(arr.length-1!=i)
                         {
@@ -108,6 +131,8 @@ export class AttendanceDetail extends Component {
                         );
                             }
                     })}
+                    </div>
+                    }
 
 
                 </div>
