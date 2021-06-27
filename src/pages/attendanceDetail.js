@@ -3,6 +3,7 @@ import axios from "axios";
 import Calendar from 'react-calendar';
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
+import 'react-calendar/dist/Calendar.css';
 
 export class AttendanceDetail extends Component {
     state = {
