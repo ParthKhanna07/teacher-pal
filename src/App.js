@@ -16,6 +16,7 @@ import AllBatches from './pages/allBatches';
 import AttendanceDetail  from './pages/attendanceDetail';
 import Quizshow from './pages/quizshow';
 import Allthings from './pages/allthings';
+import Quizdetail from './pages/quizdetail';
 
 class App extends Component {
 
@@ -37,6 +38,7 @@ class App extends Component {
                         <Route path="/attendancedetail/:id" component={AttendanceDetail} />
                         <Route path="/quizshow/:id" component={Quizshow} />
                         <Route path="/allthings" component={Allthings}/>
+                        <Route path="/quizdetail/:quizid" component={Quizdetail} />
                         <Route path='*' component={NotFound} />
                         
                     </Switch>

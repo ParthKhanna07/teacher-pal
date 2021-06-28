@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-
+import moment from 'moment';
 export class Quizshow extends Component {
   state = {
     batch: "",
@@ -13,6 +13,11 @@ export class Quizshow extends Component {
   // };
   
 
+  quizdetailhandler=(e,id)=>{
+    
+    const url="/quizdetail/"+id;
+    this.props.history.push(url);
+  } 
   componentDidMount() {
     
     const headers = {
@@ -31,6 +36,7 @@ export class Quizshow extends Component {
       .then((result) => {
         console.log(result.data);
         this.setState({ data: result.data });
+        
       })
       .catch((error) => {
         console.log(error);
@@ -103,12 +109,15 @@ export class Quizshow extends Component {
           {this.state.data.length==0?<div><h2>No Quizes were taken in this batch</h2></div>:
           <div>{this.state.data.map((val) => {
                   return (
-                    <div className=" container cardly">
-                      <h3>Created At:{val.created_at}</h3>
-                      <h3>Duration: {val.duration}</h3>
+                    <button onClick={(e) => this.quizdetailhandler(e,val.id)}>
+                      <div className=" container quizcardly">
+                      <h3>Quiz: {val.id}</h3>
+                      <h3>Held At : {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
+                      {/* <h3>Duration: {val.duration}</h3>
                       <h3>Question:{val.question}</h3>
-                      <h3>Answer: {val.answer}</h3>
+                      <h3>Answer: {val.answer}</h3> */}
                     </div>
+                    </button>
                   );
                 })}
                 </div>
