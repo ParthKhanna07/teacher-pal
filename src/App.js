@@ -34,7 +34,7 @@ class App extends Component {
                         <Route path='/index' component={Index}/>
                         <Route path='/register' component={Register} />
                         <Route path="/attendancedetail/:id" component={AttendanceDetail} />
-                        <Route path="/quizshow/" component={Quizshow} />
+                        <Route path="/quizshow" component={Quizshow} />
                         <Route path='*' component={NotFound} />
                         
                     </Switch>

@@ -17,6 +17,13 @@ export class AllBatches extends Component {
     this.setState({ meet: event.target.value });
   };
 
+  batchhandler=(e,id)=>{
+    const site="/allthings"
+    console.log(site);
+    localStorage.setItem("isbatch",id);
+    this.props.history.push(site);
+
+  }
   handleGet = (event) => {
     event.preventDefault();
     const headers = {
@@ -143,7 +150,7 @@ export class AllBatches extends Component {
           {this.state.data.map((val) => {
                   return (
                     <div className=" container cardly">
-                      <h3>Batch Name:{val.name}</h3>
+                       <button onClick={(e) => this.batchhandler(e,val.id)}>Batch Name:{val.name}</button>
                       <h3>Created At: {val.created_at}</h3>
                       <h3>Modified At:{val.modified_at}</h3>
                       <h3>Meet Link: {val.meet_link}</h3>
