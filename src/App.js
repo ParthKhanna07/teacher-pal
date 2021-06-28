@@ -17,13 +17,14 @@ import AttendanceDetail  from './pages/attendanceDetail';
 import Quizshow from './pages/quizshow';
 import Allthings from './pages/allthings';
 import Quizdetail from './pages/quizdetail';
-
+import Navbar from './pages/navbar';
 class App extends Component {
-
+    
     render() {
         return (
             <div className="App">
-                <Router>
+                <Router forceRefresh={true}>
+                <Navbar ></Navbar>
                     <Switch>
                         <Route exact path="/" component={Start}/>
                         
@@ -31,7 +32,7 @@ class App extends Component {
                         <Route path="/join/:id" component={Join}/>
                         <Route path="/batch" component={AllBatches}/>
                         <Route path="/batchlist/:id" component={Batch}/>
-                        <Route path="/home" component={Home}></Route>
+                        <Route exact path="/home" component={Home}></Route>
                         <Route path='/dashboard' component={Dashboard} />
                         <Route path='/index' component={Index}/>
                         <Route path='/register' component={Register} />

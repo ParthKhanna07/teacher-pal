@@ -22,6 +22,7 @@ export default class Login extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
     this.setState({ isLoading: true });
     const options = {
       headers: {
@@ -50,12 +51,17 @@ export default class Login extends Component {
         console.log(error);
         this.setState({ authError: true, isLoading: false });
       });
+      
   };
+  
 
   renderRedirect = () => {
     if (this.state.redirect) {
+     
       return <Redirect to="/home" />;
+      
     }
+    
   };
 
   render() {
