@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+import moment from 'moment';
 
 export class AllBatches extends Component {
   state = {
@@ -109,7 +110,7 @@ export class AllBatches extends Component {
                       name="name"
                       onChange={this.handleNameChange}
                       required
-                    />
+                    />import moment from 'moment';
                     <label htmlFor="name">Name</label>
                   </div>
                 </div>
@@ -151,8 +152,8 @@ export class AllBatches extends Component {
                   return (
                     <div className=" container cardly">
                        <button onClick={(e) => this.batchhandler(e,val.id)}>Batch Name:{val.name}</button>
-                      <h3>Created At: {val.created_at}</h3>
-                      <h3>Modified At:{val.modified_at}</h3>
+                      <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
+                      <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Meet Link: {val.meet_link}</h3>
                     </div>
                   );
