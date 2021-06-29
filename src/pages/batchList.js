@@ -1,45 +1,48 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import  SideNav  from "./sidenav";
 export class Batch extends Component {
-  state ={
-    data:[]
+  state = {
+    data: []
   }
   componentDidMount() {
     const headers = {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Authorization: `JWT ${localStorage.getItem("token")}`
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `JWT ${localStorage.getItem("token")}`
     };
     // Typical usage (don't forget to compare props):
     const batch = this.props.match.params.id;
     const student = localStorage.getItem("userid");
-    const batchid=parseInt(batch);
-  
-    const url="http://localhost:8000/api/batch-students/"+batchid;
+    const batchid = parseInt(batch);
+
+    const url = "http://localhost:8000/api/batch-students/" + batchid;
     console.log(url);
     let bodyFormData = new FormData();
-    
+
     bodyFormData.set("batch", batchid);
     bodyFormData.set("student", student);
     axios
-      .get(url,{ headers})
+      .get(url, { headers })
       .then((result) => {
         console.log(result.data);
-        this.setState({data:result.data})
+        this.setState({ data: result.data })
         console.log(this.state.data[0].student.full_name)
-        
+
       })
       .catch((error) => {
         console.log(error);
-        
+
       });
-    
+
   }
-  
+
   render() {
     //console.log(this.props);
     return (
+      <div>
+<SideNav></SideNav>
+  
       <div className="container">
         <br></br>
         <h1>Batch {this.props.match.params.id}</h1>
@@ -48,21 +51,22 @@ export class Batch extends Component {
         {this.state.data.map((val) => {
           return (
             <div>
-              
+
               <br></br>
 
-            <div className="batch-cardly" >
-              
-              <h3>Student Name:{val.student.full_name}</h3>
-              <h3>Student Email: {val.student.email}</h3>
-              
-            </div>
+              <div className="batch-cardly" >
+
+                <h3>Student Name:{val.student.full_name}</h3>
+                <h3>Student Email: {val.student.email}</h3>
+
+              </div>
             </div>
           );
         })}
-        
+
       </div>
-      
+      </div>
+
     );
   }
 }

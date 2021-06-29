@@ -11,13 +11,17 @@
     "popper.js": "^1.15.0",
     "qs": "^6.10.1",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.6.1",
+    "react-bootstrap-sidebar": "0.0.1",
     "react-calendar": "^3.4.0",
     "react-date-picker": "^8.2.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-moment": "^1.0.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-simple-sidenav": "^2.0.0",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.14.5"
   }
 }

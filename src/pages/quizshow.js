@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
+import  SideNav  from "./sidenav";
 export class Quizshow extends Component {
   state = {
     batch: "",
@@ -70,8 +71,9 @@ export class Quizshow extends Component {
     //console.log(this.props);
     return (
       <div>
-        
+        <SideNav></SideNav>
         <div className="container">
+        
           {/* <div className="card card-login mx-auto mt-5">
             <div className="card-header">Enter Batch</div>
             <div className="card-body">
@@ -109,6 +111,7 @@ export class Quizshow extends Component {
           {this.state.data.length==0?<div><h2>No Quizes were taken in this batch</h2></div>:
           <div>{this.state.data.map((val) => {
                   return (
+                    
                     <button onClick={(e) => this.quizdetailhandler(e,val.id)}>
                       <div className=" container quizcardly">
                       <h3>Quiz: {val.id}</h3>

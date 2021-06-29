@@ -114,7 +114,7 @@ export class Navbar extends Component {
                                         href="/batch"
 
                                     >
-                                        Batches
+                                        Add Batch
                                     </a>
                                 </li>
 

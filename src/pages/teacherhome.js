@@ -12,10 +12,11 @@ export class TeacherHome extends Component {
   };
   
   batchhandler=(e,id)=>{
-    const site="/allthings"
-    console.log(site);
+    
     localStorage.setItem("isbatch",id);
-    this.props.history.push(site);
+    const url="/quizshow/"+localStorage.getItem('isbatch');
+    this.props.history.push(url);
+    
 
   }
   componentDidMount() {
