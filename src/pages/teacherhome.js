@@ -78,7 +78,7 @@ export class TeacherHome extends Component {
                        <h3>Batch Name:{val.name}</h3>
                       <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
-                      <h3>Meet Link: {val.meet_link}</h3>
+                      <a href={val.meet_link}><h3>Meet Link: {val.meet_link}</h3></a>
                     </div>
                     </button>
                   );
