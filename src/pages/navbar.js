@@ -76,7 +76,7 @@ export class Navbar extends Component {
         } else if (localStorage.getItem('role') == "is_teacher") {
             this.menu = (
                 <div class="container">
-                    <a class="navbar-brand" href="/home">
+                    <a class="navbar-brand" href="/teacherhome">
                         Home
                     </a>
                     <button

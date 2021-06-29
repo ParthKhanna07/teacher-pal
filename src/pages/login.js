@@ -57,8 +57,9 @@ export default class Login extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-     
-      return <Redirect to="/home" />;
+      if(localStorage.getItem("role")=="is_teacher")
+        return <Redirect to="/teacherhome" />;
+      else return <Redirect to="/home" />;
       
     }
     

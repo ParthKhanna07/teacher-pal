@@ -110,7 +110,7 @@ export class AllBatches extends Component {
                       name="name"
                       onChange={this.handleNameChange}
                       required
-                    />import moment from 'moment';
+                    />
                     <label htmlFor="name">Name</label>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export class AllBatches extends Component {
 
                 <div className="form-group">
                   <button className="btn btn-primary btn-block" type="submit">
-                    Add batch
+                    Create batch
                   </button>
                 </div>
               </form>
@@ -150,12 +150,14 @@ export class AllBatches extends Component {
           </div>
           {this.state.data.map((val) => {
                   return (
+                    <button onClick={(e) => this.batchhandler(e,val.id)}>
                     <div className=" container cardly">
-                       <button onClick={(e) => this.batchhandler(e,val.id)}>Batch Name:{val.name}</button>
+                       <h3>Batch Name:{val.name}</h3>
                       <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Meet Link: {val.meet_link}</h3>
                     </div>
+                    </button>
                   );
                 })}
         </div>
