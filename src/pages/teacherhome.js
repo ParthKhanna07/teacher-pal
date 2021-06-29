@@ -72,8 +72,8 @@ export class TeacherHome extends Component {
           </div>
           {this.state.data.map((val) => {
                   return (
-                    <button onClick={(e) => this.batchhandler(e,val.id)}>
-                    <div className=" container cardly">
+                    <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e,val.id)}>
+                    <div className=" container ">
                        <h3>Batch Name:{val.name}</h3>
                       <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>

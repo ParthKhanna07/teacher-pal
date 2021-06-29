@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import  SideNav  from "./sidenav";
 export class Quizdetail extends Component {
     state = {
         batch: "",
         created_by: localStorage.getItem("userid"),
         data: [],
+        student_response:[],
+        nostudentdata:true
       };
       componentDidMount() {
     
@@ -19,11 +22,27 @@ export class Quizdetail extends Component {
           "http://localhost:8000/api/quiz?created_by=" + this.state.created_by+"&batch="+localStorage.getItem('isbatch');
         console.log(url);
     
+        
         axios
           .get(url, { headers })
           .then((result) => {
             console.log(result.data);
             this.setState({ data: result.data });
+            
+            
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+         
+          const url2="http://localhost:8000/api/quiz-detail/"+localStorage.getItem('quizid');
+          axios
+          .get(url2, { headers })
+          .then((result) => {
+            console.log(result.data);
+            this.setState({ student_response: result.data });
+            console.log(this.state.student_response["student1@gmail.com"].is_correct)
+            this.setState({nostudentdata:false});
             
           })
           .catch((error) => {
@@ -33,7 +52,7 @@ export class Quizdetail extends Component {
     render() {
         return (
             <div>
-                
+                <SideNav></SideNav>
         <div className="container">
           
           
@@ -56,6 +75,25 @@ export class Quizdetail extends Component {
                   );
                 })}
                 </div>
+
+                {this.state.nodata?<div>No student took the quiz</div>:<div>
+                    {Object.keys(this.state.student_response).map((val,i,arr) => {
+                      var ans="Wrong";
+                        if(this.state.student_response[val].is_correct){
+                          ans="Right";
+                        }
+                        else if(this.state.student_response[val].is_correct==null) ans="Not Answered"
+                            return (
+                            
+                            <div className=" container attendancecardly">
+                                <h3>{val}: {ans} </h3>
+
+                            </div>
+                        );
+                            
+                    })}
+                    </div>
+                    }
                 
         </div>
             </div>

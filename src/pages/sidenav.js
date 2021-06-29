@@ -11,7 +11,7 @@ const StyledSideNav = styled.div`
     background-color: #222; /* Black */
     overflow-x: hidden;     /* Disable horizontal scroll */
     padding-top: 10px;
-    padding-left: 25px;
+    padding-left: 20px;
     font-size: 7px;
     margin-top:30px;
 `;
@@ -77,11 +77,11 @@ const RouterSideNav = withRouter(SideNav);
 
 const StyledNavItem = styled.div`
     height: 70px;
-    width: 75px; /* width must be same size as NavBar to center */
+    width: 105px; /* width must be same size as NavBar to center */
     text-align: center; /* Aligns <a> inside of NavIcon div */
     margin-bottom: 0;   /* Puts space between NavItems */
     a {
-        font-size: 2.7em;
+        font-size: 3em;
         color: ${(props) => props.active ? "white" : "#9FFFCB"};
         :hover {
             opacity: 0.7;

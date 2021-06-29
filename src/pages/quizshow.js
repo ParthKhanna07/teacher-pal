@@ -15,7 +15,7 @@ export class Quizshow extends Component {
   
 
   quizdetailhandler=(e,id)=>{
-    
+    localStorage.setItem('quizid',id);
     const url="/quizdetail/"+id;
     this.props.history.push(url);
   } 
@@ -112,8 +112,8 @@ export class Quizshow extends Component {
           <div>{this.state.data.map((val) => {
                   return (
                     
-                    <button onClick={(e) => this.quizdetailhandler(e,val.id)}>
-                      <div className=" container quizcardly">
+                    <button className="btn btn-outline-success btn-block" onClick={(e) => this.quizdetailhandler(e,val.id)}>
+                      <div className=" container ">
                       <h3>Quiz: {val.id}</h3>
                       <h3>Held At : {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
                       {/* <h3>Duration: {val.duration}</h3>

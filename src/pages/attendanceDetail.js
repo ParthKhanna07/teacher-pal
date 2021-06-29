@@ -64,6 +64,7 @@ export class AttendanceDetail extends Component {
                 console.log(result);
                 this.setState({nodata:false});
                 this.setState({ data: result.data });
+                console.log(this.state.data)
                 console.log(result.data["total_attendance_requests"]);
             })
             .catch((error) => {
