@@ -14,7 +14,8 @@ export class TeacherHome extends Component {
   batchhandler=(e,id)=>{
     
     localStorage.setItem("isbatch",id);
-    const url="/quizshow/"+localStorage.getItem('isbatch');
+    
+    const url="/batchlist/"+localStorage.getItem('isbatch');
     this.props.history.push(url);
     
 
