@@ -66,3 +66,29 @@
     border: 2px solid yellow;
     border-radius: 15px;
   }
+
+  .register-card{
+    width:400px;
+    height:400px;
+    padding-top: 150px;
+    border-radius: 150px;
+    
+  }
+
+  .btn-colour{
+    background-color:rgb(69, 204, 238);
+    color: black;
+  }
+  .btn-colour-2{
+    background-color:rgb(238, 122, 69);
+    color: black;
+  }
+
+  .colour-green{
+    background-color:rgb(69, 238, 139);
+    color: black;
+  }
+
+
+
+ 

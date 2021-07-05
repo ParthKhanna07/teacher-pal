@@ -28,8 +28,28 @@ export class start extends Component {
     return (
       <div className="container">
         <div className="text-center">
-          <button onClick={this.handleSubmitStudent}>Student </button>
-          <button onClick={this.handleSubmitTeacher}>Teacher</button>
+          <div><h2>Register as </h2></div>
+          <br></br>
+          <br></br>
+          <div className="row">
+
+          <div className='col-lg-6 col-md-12 col-sm-12'>
+          <button onClick={this.handleSubmitStudent} className="btn-colour-2 btn btn-outline-success">
+          <div className='register-card text-center' >
+            <h2>Student</h2> 
+          </div>
+          </button>
+          </div>
+          
+          <div className='col-lg-6 col-md-12 col-sm-12'>
+          <button onClick={this.handleSubmitTeacher} className='btn-colour btn btn-outline-success' >
+          <div className='register-card'>
+          <h2>Teacher</h2>
+          </div>
+          </button>
+          </div>
+          </div>
+          
         </div>
         {this.renderRedirect()}
       </div>

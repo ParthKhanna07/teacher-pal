@@ -71,7 +71,7 @@ export default class Register extends Component {
     return (
       <div className="container">
         <div className="card card-login mx-auto mt-5">
-          <div className="card-header">Register</div>
+          <div className="card-header colour-green">Register</div>
           <div className="card-body">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">

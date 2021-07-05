@@ -71,9 +71,9 @@ export default class Login extends Component {
       <div className="container">
         <TitleComponent title="React CRUD Login "></TitleComponent>
         <div className="card card-login mx-auto mt-5">
-          <div className="card-header">Login</div>
+          <div className="card-header colour-green">Login</div>
 
-          <div className="card-body">
+          <div className="card-body ">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <div className="form-label-group">
