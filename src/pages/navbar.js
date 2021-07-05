@@ -76,8 +76,8 @@ export class Navbar extends Component {
         } else if (localStorage.getItem('role') == "is_teacher") {
             this.menu = (
                 <div class="container">
-                    <a class="navbar-brand" href="/teacherhome">
-                        Home
+                    <a class="navbar-brand " href="/teacherhome">
+                        <h2>Home</h2>
                     </a>
                     <button
                         class="navbar-toggler"
@@ -87,14 +87,27 @@ export class Navbar extends Component {
                         aria-controls="navbarCollapse"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                        onClick={this.refreshPage}
+                    
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarCollapse">
 
-                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <ul class="navbar-nav mr-auto mb-2 mb-md-0">
                             <li class="nav-item">
+                            <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        href="/batch"
+
+                                    >
+                                        Add Batch
+                                    </a>
+                            </li>
+                        </ul>
+                        
+                            <ul class="navbar-nav  mb-2 mb-md-0 ">
+                                <li class="nav-item">
                                 <a
                                     class="nav-link active"
                                     aria-current="page"
@@ -103,24 +116,12 @@ export class Navbar extends Component {
                                 >
                                     Logout
                                 </a>
-                            </li>
-                        </ul>
-                        <form class="d-flex">
-                            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="/batch"
-
-                                    >
-                                        Add Batch
-                                    </a>
+                                    
                                 </li>
 
                             </ul>
 
-                        </form>
+                        
                     </div>
                 </div>
             );
