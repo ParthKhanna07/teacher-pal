@@ -8,9 +8,10 @@ const StyledSideNav = styled.div`
     width: 150px;     /* Set the width of the sidebar */
     z-index: 1;      /* Stay on top of everything */
     top: 3.4em;      /* Stay at the top */
+    
     background-color: #222; /* Black */
     overflow-x: hidden;     /* Disable horizontal scroll */
-    padding-top: 10px;
+    padding-top: 200px;
     padding-left: 20px;
     font-size: 7px;
     margin-top:30px;
@@ -76,7 +77,7 @@ class SideNav extends React.Component {
 const RouterSideNav = withRouter(SideNav);
 
 const StyledNavItem = styled.div`
-    height: 70px;
+    height: 100px;
     width: 105px; /* width must be same size as NavBar to center */
     text-align: center; /* Aligns <a> inside of NavIcon div */
     margin-bottom: 0;   /* Puts space between NavItems */

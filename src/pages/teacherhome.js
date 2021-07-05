@@ -75,13 +75,14 @@ export class TeacherHome extends Component {
                   return (
                     
                     <div className=" container ">
+                      <div className="batches">
                       <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e,val.id)}>
                        <h3>Batch Name:{val.name}</h3>
                       <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       </button>
                       <a target="_blank" href={val.meet_link}><button className="btn btn-outline-primary btn-block"><h3>Meet Link: {val.meet_link}</h3></button></a>
-                    
+                    </div>
                     <br></br>
                     </div>
                     
