@@ -44,6 +44,7 @@ class App extends Component {
                         <Route path="/quizdetail/:quizid" component={Quizdetail} />
                         <Route path="/teacherhome" component={TeacherHome} />
                         <Route path="/sidenav" component={SideNav} />
+                        
                         <Route path='*' component={NotFound} />
                         
                     </Switch>

@@ -93,7 +93,9 @@ export class AttendanceDetail extends Component {
         //console.log(this.props);
         return (
             <div>
+                <div className="align-sidenav">
                 <SideNav></SideNav>
+                </div>
                 <div className="container">
                     <div className="card card-login mx-auto mt-5">
                         <Calendar
@@ -125,10 +127,13 @@ export class AttendanceDetail extends Component {
                         if(arr.length-1!=i)
                         {
                             return (
-                            
+                            <div>
                             <div className=" container attendancecardly">
                                 <h3>{val}: {this.state.data[val]} %</h3>
+                                
 
+                            </div>
+                            
                             </div>
                         );
                             }

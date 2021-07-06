@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
@@ -52,6 +53,7 @@ class SideNav extends React.Component {
     render() {
         const { items, activePath } = this.state;
         return(
+            <div>
             <StyledSideNav>
                 {
                     items.map((item) => {
@@ -70,6 +72,7 @@ class SideNav extends React.Component {
                     })
                 }
             </StyledSideNav>
+            </div>
         );
     }
 }
@@ -100,6 +103,7 @@ class NavItem extends React.Component {
     render() {
         const { active } = this.props;
         return(
+            
             <StyledNavItem active={active}>
                 <Link to={this.props.path} className={this.props.css} onClick={this.handleClick}>
                     <NavIcon>{this.props.name}</NavIcon>
@@ -119,3 +123,7 @@ export default class Sidebar extends React.Component {
         );
     }
 }
+
+
+
+
