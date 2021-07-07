@@ -43,7 +43,7 @@ export class Navbar extends Component {
                         aria-controls="navbarCollapse"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                        
+
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -87,28 +87,28 @@ export class Navbar extends Component {
                         aria-controls="navbarCollapse"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                    
+
                     >
                         <span class="navbar-toggler-icon"></span>
-  
+
                     </button>
                     <div class="collapse navbar-collapse " id="navbarCollapse">
 
                         <ul class="navbar-nav mr-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                            <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="/batch"
+                                <a
+                                    class="nav-link active"
+                                    aria-current="page"
+                                    href="/batch"
 
-                                    >
-                                        Add Batch
-                                    </a>
+                                >
+                                    Add Batch
+                                </a>
                             </li>
                         </ul>
-                        
-                            <ul class="navbar-nav  mb-2 mb-md-0 ">
-                                <li class="nav-item">
+
+                        <ul class="navbar-nav  mb-2 mb-md-0 ">
+                            <li class="nav-item">
                                 <a
                                     class="nav-link active"
                                     aria-current="page"
@@ -117,12 +117,12 @@ export class Navbar extends Component {
                                 >
                                     Logout
                                 </a>
-                                    
-                                </li>
 
-                            </ul>
+                            </li>
 
-                        
+                        </ul>
+
+
                     </div>
                 </div>
             );

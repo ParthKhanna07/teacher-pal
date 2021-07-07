@@ -18,13 +18,13 @@ export class AllBatches extends Component {
     this.setState({ meet: event.target.value });
   };
 
-  batchhandler=(e,id)=>{
-    
-    localStorage.setItem("isbatch",id);
-    
-    const url="/batchlist/"+localStorage.getItem('isbatch');
+  batchhandler = (e, id) => {
+
+    localStorage.setItem("isbatch", id);
+
+    const url = "/batchlist/" + localStorage.getItem('isbatch');
     this.props.history.push(url);
-    
+
 
   }
   handleGet = (event) => {
@@ -89,14 +89,14 @@ export class AllBatches extends Component {
       .catch((error) => {
         console.log(error);
       });
-      window.location.reload();
+    window.location.reload();
   };
 
   render() {
     //console.log(this.props);
     return (
       <div>
-        
+
         <div className="container">
           <div className="card card-login mx-auto mt-5">
             <div className="card-header">Create Batch</div>
@@ -144,28 +144,28 @@ export class AllBatches extends Component {
                 onClick={this.handleGet}
               >
                 Show Batches
-                
+
               </button>
-              
+
             </div>
-           
+
           </div>
           {this.state.data.map((val) => {
-                  return (
-                    <div className=" container ">
-                    <div className="batches">
-                    <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e,val.id)}>
-                     <h3>Batch Name:{val.name}</h3>
+            return (
+              <div className=" container ">
+                <div className="batches">
+                  <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e, val.id)}>
+                    <h3>Batch Name:{val.name}</h3>
                     <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                     <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
-                    </button>
-                    <a target="_blank" href={val.meet_link}><button className="btn btn-outline-primary btn-block"><h3>Meet Link: {val.meet_link}</h3></button></a>
-                  </div>
-                  <br></br>
-                  </div>
-                  
-                  );
-                })}
+                  </button>
+                  <a target="_blank" href={val.meet_link}><button className="btn btn-outline-primary btn-block"><h3>Meet Link: {val.meet_link}</h3></button></a>
+                </div>
+                <br></br>
+              </div>
+
+            );
+          })}
         </div>
       </div>
     );

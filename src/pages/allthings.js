@@ -2,19 +2,19 @@ import React, { Component } from 'react'
 
 export class Allthings extends Component {
 
-    handleattendance=(event) =>{
-        const url="/attendancedetail/"+localStorage.getItem('isbatch');
+    handleattendance = (event) => {
+        const url = "/attendancedetail/" + localStorage.getItem('isbatch');
         this.props.history.push(url);
     }
 
 
-    handlestudents=(event) =>{
-        const url="/batchlist/"+localStorage.getItem('isbatch');
+    handlestudents = (event) => {
+        const url = "/batchlist/" + localStorage.getItem('isbatch');
         this.props.history.push(url);
     }
 
-    handlequizes=(event) =>{
-        const url="/quizshow/"+localStorage.getItem('isbatch');
+    handlequizes = (event) => {
+        const url = "/quizshow/" + localStorage.getItem('isbatch');
         this.props.history.push(url);
     }
     render() {

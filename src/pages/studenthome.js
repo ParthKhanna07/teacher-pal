@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
 
-export class TeacherHome extends Component {
+export class StudentHome extends Component {
   state = {
 
     created_by: localStorage.getItem("userid"),
@@ -16,7 +16,7 @@ export class TeacherHome extends Component {
     localStorage.setItem("isbatch", id);
     localStorage.setItem("batchName", name);
 
-    const url = "/batchlist/" + localStorage.getItem('isbatch');
+    const url = "/studentattendance/" + localStorage.getItem('isbatch');
     this.props.history.push(url);
 
 
@@ -31,7 +31,7 @@ export class TeacherHome extends Component {
     // Typical usage (don't forget to compare props):
     console.log(this.props);
     const url =
-      "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
+      "http://localhost:8000/api/student-batch-list";
     console.log(url);
 
     axios
@@ -55,18 +55,7 @@ export class TeacherHome extends Component {
       <div>
 
         <div className="container">
-          <div className="card card-login mx-auto mt-5" style={{ width: '250px' }}>
-
-
-
-            <a href="/batch">
-              <button className="btn btn-primary btn-block " style={{ height: '100%', width: '100%' }}   >
-                Create New Batch
-              </button>
-            </a>
-
-
-          </div>
+          
           {this.state.data.map((val) => {
             return (
 
@@ -90,4 +79,4 @@ export class TeacherHome extends Component {
   }
 }
 
-export default TeacherHome;
+export default StudentHome;

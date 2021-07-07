@@ -36,11 +36,11 @@ export default class Register extends Component {
     const role = this.state.role;
     const password = this.state.password;
     const full_name = this.state.name;
-    const username=this.state.username;
+    const username = this.state.username;
     let bodyFormData = new FormData();
     bodyFormData.set("role", role);
     bodyFormData.set("email", email);
-    
+
     bodyFormData.set("full_name", full_name);
     bodyFormData.set("username", username);
     bodyFormData.set("password", password);
