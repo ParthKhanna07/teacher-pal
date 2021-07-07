@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
 import 'react-calendar/dist/Calendar.css';
-import  SideNav  from "./sidenav";
+import  Sidebar  from "./sidenav";
 export class AttendanceDetail extends Component {
     state = {
         date: new Date(),
@@ -92,10 +92,11 @@ export class AttendanceDetail extends Component {
     render() {
         //console.log(this.props);
         return (
-            <div>
-                <div className="align-sidenav">
-                <SideNav></SideNav>
-                </div>
+            <div > 
+                
+               
+                <Sidebar></Sidebar>
+            
                 <div className="container">
                     <div className="card card-login mx-auto mt-5">
                         <Calendar

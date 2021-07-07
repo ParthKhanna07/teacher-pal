@@ -33,17 +33,17 @@ export class start extends Component {
           <br></br>
           <div className="row">
 
-          <div className='col-lg-6 col-md-12 col-sm-12'>
-          <button onClick={this.handleSubmitStudent} className="btn-colour-2 btn btn-outline-success">
-          <div className='register-card text-center' >
+          <div className='col-lg-6 col-md-12 col-sm-12 margin ' >
+          <button onClick={this.handleSubmitStudent} className=" radius  btn-outline-primary ">
+          <div className='register-card text-center btn-colour' >
             <h2>Student</h2> 
           </div>
           </button>
           </div>
           
-          <div className='col-lg-6 col-md-12 col-sm-12'>
-          <button onClick={this.handleSubmitTeacher} className='btn-colour btn btn-outline-success' >
-          <div className='register-card'>
+          <div className='col-lg-6 col-md-12 col-sm-12 margin'>
+          <button onClick={this.handleSubmitTeacher} className=' radius btn-outline-success' >
+          <div className='register-card register-card text-center btn-colour-2'>
           <h2>Teacher</h2>
           </div>
           </button>

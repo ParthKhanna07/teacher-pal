@@ -53,13 +53,13 @@ export class TeacherHome extends Component {
       <div>
         
         <div className="container">
-          <div className="card card-login mx-auto mt-5">
+          <div className="card card-login mx-auto mt-5" style={{width:'250px'}}>
             
            
 
                 <a href="/batch">
-                  <button  className="btn btn-primary btn-block"  >
-                    Create batch
+                  <button  className="btn btn-primary btn-block " style={{height:'100%', width:'100%'}}   >
+                    Create New Batch
                   </button>
                 </a>
              

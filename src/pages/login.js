@@ -70,7 +70,7 @@ export default class Login extends Component {
     return (
       <div className="container">
         <TitleComponent title="React CRUD Login "></TitleComponent>
-        <div className="card card-login mx-auto mt-5">
+        <div className="card card-login mx-auto mt-5 ">
           <div className="card-header colour-green">Login</div>
 
           <div className="card-body ">
@@ -83,7 +83,7 @@ export default class Login extends Component {
                       (this.state.authError ? "is-invalid" : "")
                     }
                     id="inputEmail"
-                    placeholder="Email address"
+                    placeholder="Email"
                     type="text"
                     name="email"
                     onChange={this.handleEmailChange}

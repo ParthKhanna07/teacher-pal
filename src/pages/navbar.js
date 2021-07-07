@@ -43,7 +43,7 @@ export class Navbar extends Component {
                         aria-controls="navbarCollapse"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                        onClick={this.refreshPage}
+                        
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>

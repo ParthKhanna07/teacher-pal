@@ -19,7 +19,7 @@ import Allthings from './pages/allthings';
 import Quizdetail from './pages/quizdetail';
 import Navbar from './pages/navbar';
 import TeacherHome from './pages/teacherhome';
-import  SideNav  from "./pages/sidenav";
+import  Sidebar  from "./pages/sidenav";
 class App extends Component {
     
     render() {
@@ -43,7 +43,7 @@ class App extends Component {
                         <Route path="/allthings" component={Allthings}/>
                         <Route path="/quizdetail/:quizid" component={Quizdetail} />
                         <Route path="/teacherhome" component={TeacherHome} />
-                        <Route path="/sidenav" component={SideNav} />
+                        <Route path="/sidenav" component={Sidebar} />
                         
                         <Route path='*' component={NotFound} />
                         
