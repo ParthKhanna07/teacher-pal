@@ -130,7 +130,7 @@ export class Navbar extends Component {
         } else {
             this.menu = (
                 <div class="container">
-                    <a class="navbar-brand" href="/home">
+                    <a class="navbar-brand" href="/studenthome">
                         Home
                     </a>
                     <button
@@ -141,7 +141,7 @@ export class Navbar extends Component {
                         aria-controls="navbarCollapse"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
-                        onClick={this.refreshPage}
+                        
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -165,7 +165,7 @@ export class Navbar extends Component {
                                     <a
                                         class="nav-link active"
                                         aria-current="page"
-                                        href="/"
+                                        href="/studentattendance"
 
                                     >
                                         Attendance

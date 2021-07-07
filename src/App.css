@@ -140,3 +140,26 @@
 .margin{
   margin-bottom: 10px;
 }
+
+.attempt-cardly{
+  width: 50%;
+  height: 10%;
+  border: 2px solid yellow;
+  border-radius: 15px;
+  background-color:rgba(236, 252, 9, 0.336);
+}
+
+.activeness{
+  font-size:20px;
+  
+  color: black;
+  
+  margin-right: 10px;
+  margin-left:10px;
+  border-bottom: 5px solid #24ec24;
+}
+
+.butt-hover:hover{
+  background-color:#61fb6e;
+  font-size: 20px;
+}

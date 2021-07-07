@@ -11,7 +11,7 @@ export class StudentAttendance extends Component {
         data: [],
         nodata: false,
         attendance: "/studentattendance/" + localStorage.getItem('isbatch'),
-        quiz: "/quizshow/" + localStorage.getItem('isbatch'),
+        quiz: "/studentquiz/" + localStorage.getItem('isbatch'),
 
     }
 
@@ -90,7 +90,7 @@ export class StudentAttendance extends Component {
 
                     <div>
                         {this.state.nodata ? <div><h2>Total Attendence : 0</h2><br></br><h2>No attendence was responded</h2></div> : <div>
-                            {this.state.nodata ? <div></div> : <div>
+                            {Object.keys(this.state.data).length==0 ? <div><br></br><h1>No attendance taken</h1></div> : <div>
                                 {Object.keys(this.state.data).map((val, i, arr) => {
 
                                     return (

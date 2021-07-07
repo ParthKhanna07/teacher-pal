@@ -20,6 +20,7 @@ import Quizdetail from './pages/quizdetail';
 import Navbar from './pages/navbar';
 import TeacherHome from './pages/teacherhome';
 import StudentHome from './pages/studenthome';
+import StudentQuiz from './pages/studentquiz';
 import StudentAttendance from './pages/studentattendance';
 class App extends Component {
 
@@ -46,7 +47,9 @@ class App extends Component {
                         <Route path="/teacherhome" component={TeacherHome} />
                         <Route path="/studenthome" component={StudentHome} />
                         <Route path="/studentattendance/:id" component={StudentAttendance} />
+                        <Route path="/studentquiz/:id" component={StudentQuiz} />
                         <Route path='*' component={NotFound} />
+                        
 
                     </Switch>
                 </Router>
