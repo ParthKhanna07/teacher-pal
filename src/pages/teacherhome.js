@@ -11,9 +11,10 @@ export class TeacherHome extends Component {
     data: [],
   };
   
-  batchhandler=(e,id)=>{
+  batchhandler=(e,id,name)=>{
     
     localStorage.setItem("isbatch",id);
+    localStorage.setItem("batchName",name);
     
     const url="/batchlist/"+localStorage.getItem('isbatch');
     this.props.history.push(url);
@@ -38,6 +39,7 @@ export class TeacherHome extends Component {
       .then((result) => {
         console.log(result.data);
         this.setState({ data: result.data });
+       
       })
       .catch((error) => {
         console.log(error);
@@ -70,7 +72,7 @@ export class TeacherHome extends Component {
                     
                     <div className=" container ">
                       <div className="batches">
-                      <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e,val.id)}>
+                      <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e,val.id,val.name)}>
                        <h3>Batch Name:{val.name}</h3>
                       <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                       <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>

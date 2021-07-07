@@ -42,7 +42,7 @@ export class Batch extends Component {
       .then((result) => {
         console.log(result.data);
         this.setState({ data: result.data })
-        console.log(this.state.data[0].student.full_name)
+        
 
       })
       .catch((error) => {
@@ -67,7 +67,7 @@ export class Batch extends Component {
   
       <div className="container">
         <br></br>
-        <h1>Batch {this.props.match.params.id}</h1>
+        <h1>Batch:- {localStorage.getItem('batchName')}</h1>
         <br></br>
         
         <h3>Invite Students to the batch </h3>
