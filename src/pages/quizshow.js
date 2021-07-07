@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
-import  SideNav  from "./sidenav";
+
 export class Quizshow extends Component {
   state = {
     batch: "",
     created_by: localStorage.getItem("userid"),
     data: [],
+    attendance:"/attendancedetail/"+localStorage.getItem('isbatch'),
+            quiz:"/quizshow/"+localStorage.getItem('isbatch'),
+            students:"/batchlist/"+localStorage.getItem('isbatch')
   };
   // handleBatchChange = (event) => {
   //   this.setState({ batch: event.target.value });
@@ -71,7 +74,13 @@ export class Quizshow extends Component {
     //console.log(this.props);
     return (
       <div>
-        <SideNav></SideNav>
+        <div>
+                   
+                   <a type="button" href={this.state.quiz}><button style={{marginRight:'4px', color:'white', backgroundColor:"green"}}  className="btn btn-outline-success ">Quizes</button></a>
+                   <a  type="button" href={this.state.attendance}><button style={{marginRight:'4px'}} className="btn btn-outline-success ">Attendance</button></a> 
+                   <a  type="button" href={this.state.students}><button style={{marginRight:'4px'}}  className="btn btn-outline-success ">Students</button> </a>
+               </div>
+               <br></br>
         <div className="container">
         
           {/* <div className="card card-login mx-auto mt-5">

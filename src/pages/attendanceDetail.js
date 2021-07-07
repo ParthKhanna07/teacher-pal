@@ -4,13 +4,17 @@ import Calendar from 'react-calendar';
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
 import 'react-calendar/dist/Calendar.css';
-import  Sidebar  from "./sidenav";
+
 export class AttendanceDetail extends Component {
     state = {
         date: new Date(),
         data: [],
-        nodata: false
+        nodata: false,
+        attendance:"/attendancedetail/"+localStorage.getItem('isbatch'),
+            quiz:"/quizshow/"+localStorage.getItem('isbatch'),
+            students:"/batchlist/"+localStorage.getItem('isbatch')
     }
+    
     onChange = date => this.setState({ date })
 
 
@@ -94,8 +98,13 @@ export class AttendanceDetail extends Component {
         return (
             <div > 
                 
-               
-                <Sidebar></Sidebar>
+               <div>
+                   
+                   <a type="button" href={this.state.quiz}><button style={{marginRight:'4px'}}  className="btn btn-outline-success ">Quizes</button></a>
+                   <a  type="button" href={this.state.attendance}><button style={{marginRight:'4px', color:'white', backgroundColor:"green"}} className="btn btn-outline-success ">Attendance</button></a> 
+                   <a  type="button" href={this.state.students}><button style={{marginRight:'4px'}}  className="btn btn-outline-success ">Students</button> </a>
+               </div>
+                
             
                 <div className="container">
                     <div className="card card-login mx-auto mt-5">

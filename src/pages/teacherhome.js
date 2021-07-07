@@ -63,13 +63,7 @@ export class TeacherHome extends Component {
                   </button>
                 </a>
              
-           
-           
-              
-           
-
-
-           
+          
           </div>
           {this.state.data.map((val) => {
                   return (

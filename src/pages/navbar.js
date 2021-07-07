@@ -90,6 +90,7 @@ export class Navbar extends Component {
                     
                     >
                         <span class="navbar-toggler-icon"></span>
+  
                     </button>
                     <div class="collapse navbar-collapse " id="navbarCollapse">
 

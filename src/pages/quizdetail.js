@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import  SideNav  from "./sidenav";
+
 export class Quizdetail extends Component {
     state = {
         batch: "",
         created_by: localStorage.getItem("userid"),
         data: [],
         student_response:[],
-        nostudentdata:true
+        nostudentdata:true,
+        attendance:"/attendancedetail/"+localStorage.getItem('isbatch'),
+            quiz:"/quizshow/"+localStorage.getItem('isbatch'),
+            students:"/batchlist/"+localStorage.getItem('isbatch')
       };
       componentDidMount() {
     
@@ -52,7 +55,14 @@ export class Quizdetail extends Component {
     render() {
         return (
             <div>
-                <SideNav></SideNav>
+                <div>
+                   
+                   <a type="button" href={this.state.quiz}><button style={{marginRight:'4px', color:'white', backgroundColor:"green"}}  className="btn btn-outline-success ">Quizes</button></a>
+                   <a  type="button" href={this.state.attendance}><button style={{marginRight:'4px'}} className="btn btn-outline-success ">Attendance</button></a> 
+                   <a  type="button" href={this.state.students}><button style={{marginRight:'4px'}}  className="btn btn-outline-success ">Students</button> </a>
+               </div>
+               <br></br>
+        <div className="container"></div>
         <div className="container">
           
           
