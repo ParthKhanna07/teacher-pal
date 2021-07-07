@@ -13,8 +13,8 @@ export class StudentQuiz extends Component {
     quiz: "/studentquiz/" + localStorage.getItem('isbatch'),
     missed_click: false,
     attempt_click: true,
-    is_missed_active:false,
-    is_attempted_active:true
+    is_missed_active: false,
+    is_attempted_active: true
   };
   componentDidMount() {
 
@@ -52,16 +52,16 @@ export class StudentQuiz extends Component {
         <div>
           <div>
 
-            <a type="button" href={this.state.quiz}><button style={{ marginRight: '4px',  color: 'white', backgroundColor: "green"  }} className="btn btn-outline-success ">Quizes</button></a>
-            <a type="button" href={this.state.attendance}><button style={{ marginRight: '4px'}} className="btn btn-outline-success ">Attendance</button></a>
+            <a type="button" href={this.state.quiz}><button style={{ marginRight: '4px', color: 'white', backgroundColor: "green" }} className="btn btn-outline-success ">Quizes</button></a>
+            <a type="button" href={this.state.attendance}><button style={{ marginRight: '4px' }} className="btn btn-outline-success ">Attendance</button></a>
 
           </div>
           <br></br>
-          <button style={{ marginRight: '4px'   }} className={this.state.is_attempted_active?"activeness btn  ": "btn butt-hover "} onClick={() => this.setState({ missed_click: false, attempt_click: true, is_attempted_active:true, is_missed_active:false })}>Attempted Quizes</button>
+          <button style={{ marginRight: '4px' }} className={this.state.is_attempted_active ? "activeness btn  " : "btn butt-hover "} onClick={() => this.setState({ missed_click: false, attempt_click: true, is_attempted_active: true, is_missed_active: false })}>Attempted Quizes</button>
           <span>  |  </span>
-          <button style={{ marginRight: '4px' }} className={this.state.is_missed_active?"activeness btn  ": "btn butt-hover"} onClick={() => this.setState({ attempt_click: false, missed_click: true, is_attempted_active:false, is_missed_active:true  })}>Missed Quizzes</button>
+          <button style={{ marginRight: '4px' }} className={this.state.is_missed_active ? "activeness btn  " : "btn butt-hover"} onClick={() => this.setState({ attempt_click: false, missed_click: true, is_attempted_active: false, is_missed_active: true })}>Missed Quizzes</button>
           <div>
-          <br></br>
+            <br></br>
             {this.state.attempt_click == true ? <div>
 
               <div className=" container attempt-cardly"><h3>Attempted Quizes</h3></div>
@@ -117,17 +117,17 @@ export class StudentQuiz extends Component {
                         <div>
 
                           <div className=" container attendancecardly">
-                            <h3>Held At: {moment(this.state.data.attempted_quizzes[val].quiz.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
-                            <h3>Question: {this.state.data.attempted_quizzes[val].quiz.question} </h3>
+                            <h3>Held At: {moment(this.state.data.missed_quizzes[val].created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
+                            <h3>Question: {this.state.data.missed_quizzes[val].question} </h3>
                             <h4>Options
                               <ul>
-                                <li>Option a:- {this.state.data.attempted_quizzes[val].quiz.option_a}</li>
-                                <li>Option b:- {this.state.data.attempted_quizzes[val].quiz.option_b}</li>
-                                <li>Option c:- {this.state.data.attempted_quizzes[val].quiz.option_c}</li>
-                                <li>Option d:- {this.state.data.attempted_quizzes[val].quiz.option_d}</li>
+                                <li>Option a:- {this.state.data.missed_quizzes[val].option_a}</li>
+                                <li>Option b:- {this.state.data.missed_quizzes[val].option_b}</li>
+                                <li>Option c:- {this.state.data.missed_quizzes[val].option_c}</li>
+                                <li>Option d:- {this.state.data.missed_quizzes[val].option_d}</li>
                               </ul>
                             </h4>
-                            <h3>Correct Answer: {this.state.data.attempted_quizzes[val].quiz.answer} </h3>
+                            <h3>Correct Answer: {this.state.data.missed_quizzes[val].answer} </h3>
 
                           </div>
                         </div>
