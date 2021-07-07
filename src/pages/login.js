@@ -116,14 +116,7 @@ export default class Login extends Component {
                   </div>
                 </div>
               </div>
-              <div className="form-group">
-                <div className="checkbox">
-                  <label>
-                    <input type="checkbox" value="remember-me" />
-                    Remember Password
-                  </label>
-                </div>
-              </div>
+              
               <div className="form-group">
                 <button
                   className="btn btn-primary btn-block"

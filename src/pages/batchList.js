@@ -71,8 +71,13 @@ export class Batch extends Component {
           <br></br>
 
           <h3>Invite Students to the batch </h3>
-          <button style={{ width: '60%' }} className="btn btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3000/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
-          {this.state.data.map((val) => {
+
+
+          <button title="click to copy" style={{ width: '60%' }} className="btn  btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3000/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
+        
+
+
+          {this.state.data.length == 0 ? <div><h1>No students added</h1></div> : this.state.data.map((val) => {
             return (
               <div >
 
