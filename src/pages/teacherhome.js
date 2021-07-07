@@ -12,9 +12,9 @@ export class TeacherHome extends Component {
   };
 
   batchhandler = (e, id, name) => {
-
-    localStorage.setItem("isbatch", id);
     localStorage.setItem("batchName", name);
+    localStorage.setItem("isbatch", id);
+    
 
     const url = "/batchlist/" + localStorage.getItem('isbatch');
     this.props.history.push(url);

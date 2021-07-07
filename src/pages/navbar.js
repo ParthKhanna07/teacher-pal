@@ -131,7 +131,7 @@ export class Navbar extends Component {
             this.menu = (
                 <div class="container">
                     <a class="navbar-brand" href="/studenthome">
-                        Home
+                        <h2>Home</h2>
                     </a>
                     <button
                         class="navbar-toggler"
@@ -159,22 +159,7 @@ export class Navbar extends Component {
                                 </a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="/studentattendance"
-
-                                    >
-                                        Attendance
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                        </form>
+                        
                     </div>
                 </div>
             );

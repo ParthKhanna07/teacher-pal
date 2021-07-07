@@ -18,8 +18,8 @@ export class AllBatches extends Component {
     this.setState({ meet: event.target.value });
   };
 
-  batchhandler = (e, id) => {
-
+  batchhandler = (e, id,name) => {
+    localStorage.setItem("batchName", name);
     localStorage.setItem("isbatch", id);
 
     const url = "/batchlist/" + localStorage.getItem('isbatch');
@@ -154,7 +154,7 @@ export class AllBatches extends Component {
             return (
               <div className=" container ">
                 <div className="batches">
-                  <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e, val.id)}>
+                  <button className="btn btn-outline-success btn-block" onClick={(e) => this.batchhandler(e, val.id,val.name)}>
                     <h3>Batch Name:{val.name}</h3>
                     <h3>Created At: {moment(val.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>
                     <h3>Modified At:{moment(val.modified_at).format("dddd, MMMM Do YYYY, h:mm:ss a")}</h3>

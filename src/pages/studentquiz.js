@@ -65,7 +65,7 @@ export class StudentQuiz extends Component {
             {this.state.attempt_click == true ? <div>
 
               <div className=" container attempt-cardly"><h3>Attempted Quizes</h3></div>
-              {this.state.attempted_quizzes === 0 ? <div><h2>No Quiz was Attempted</h2></div> :
+              {this.state.attempted_quizzes === 0 ? <div><br></br><h2>No Quiz was Attempted</h2></div> :
                 <div>
 
                   {Object.keys(this.state.data.attempted_quizzes).map((val, i, arr) => {
@@ -105,7 +105,7 @@ export class StudentQuiz extends Component {
               <div>
 
                 <div className=" container attempt-cardly"><h3>Missed Quizes</h3></div>
-                {this.state.missed_quizzes === 0 ? <div><h2>No Quiz was Missed</h2></div> :
+                {this.state.missed_quizzes === 0 ? <div><br></br><h2>No Quiz was Missed</h2></div> :
                   <div>
 
                     {Object.keys(this.state.data.missed_quizzes).map((val, i, arr) => {

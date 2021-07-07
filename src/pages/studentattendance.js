@@ -96,10 +96,10 @@ export class StudentAttendance extends Component {
                                     return (
 
                                         <div className=" container attendancecardly">
-                                            <h3>{val} </h3>
-                                            <h3>Total Attendence Count :{this.state.data[val].total_attendance_count}</h3>
-                                            <h3>My Attendence Count: {this.state.data[val].my_attendance_count}</h3>
-                                            <h3>My Attentivity: {this.state.data[val].attentivity} %</h3>
+                                            <h3>Date:- {moment(val).format("dddd, MMMM Do YYYY")} </h3>
+                                            <h4>Total Attendence Count :{this.state.data[val].total_attendance_count}</h4>
+                                            <h4>My Attendence Count: {this.state.data[val].my_attendance_count}</h4>
+                                            <h4>My Attentivity: {this.state.data[val].attentivity} %</h4>
                                         </div>
                                     );
 

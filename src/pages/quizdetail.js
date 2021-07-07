@@ -67,8 +67,11 @@ export class Quizdetail extends Component {
 
 
           <div>{this.state.data.map((val) => {
+            if(val.id==localStorage.getItem('quizid'))
             return (
+              
               <div className=" container quizlistcardly">
+               
                 <h3>Question: {val.question}</h3>
                 <h3>Options:
                   <ul>

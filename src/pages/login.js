@@ -59,7 +59,7 @@ export default class Login extends Component {
     if (this.state.redirect) {
       if (localStorage.getItem("role") == "is_teacher")
         return <Redirect to="/teacherhome" />;
-      else return <Redirect to="/home" />;
+      else return <Redirect to="/studenthome" />;
 
     }
 
