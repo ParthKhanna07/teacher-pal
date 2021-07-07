@@ -6,8 +6,20 @@ export class Batch extends Component {
     data: [],
     attendance:"/attendancedetail/"+localStorage.getItem('isbatch'),
             quiz:"/quizshow/"+localStorage.getItem('isbatch'),
-            students:"/batchlist/"+localStorage.getItem('isbatch')
+            students:"/batchlist/"+localStorage.getItem('isbatch'),
+            copySuccess: ''
+            
   }
+
+  copyToClipboard = (e) => {
+    var textField = document.createElement('textarea')
+    textField.innerText = 'http://localhost:3000/join/'+this.props.match.params.id
+    document.body.appendChild(textField)
+    textField.select()
+    document.execCommand('copy')
+    textField.remove()
+    this.setState({copySuccess:'Copied!'})
+  };
   componentDidMount() {
     const headers = {
       "Content-Type": "application/json",
@@ -40,6 +52,7 @@ export class Batch extends Component {
 
   }
 
+  
   render() {
     //console.log(this.props);
     return (
@@ -56,7 +69,9 @@ export class Batch extends Component {
         <br></br>
         <h1>Batch {this.props.match.params.id}</h1>
         <br></br>
-        <h3>Invite Students to the batch "http://localhost:3000/join/{this.props.match.params.id}"</h3>
+        
+        <h3>Invite Students to the batch </h3>
+        <button style={{width:'60%'}} className="btn btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3000/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
         {this.state.data.map((val) => {
           return (
             <div >
