@@ -17,6 +17,7 @@
     "react-calendar": "^3.4.0",
     "react-date-picker": "^8.2.0",
     "react-dom": "^16.13.1",
+    "react-gitignore": "^1.0.12",
     "react-helmet": "^6.1.0",
     "react-moment": "^1.0.0",
     "react-router-dom": "^5.2.0",

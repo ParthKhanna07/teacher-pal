@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/login";
-import Dashboard from "./pages/dashboard";
+
 import Index from "./pages/index";
 import "./App.css";
 
@@ -37,7 +37,7 @@ class App extends Component {
                         <Route path="/batch" component={AllBatches} />
                         <Route path="/batchlist/:id" component={Batch} />
                         <Route exact path="/home" component={Home}></Route>
-                        <Route path='/dashboard' component={Dashboard} />
+                       
                         <Route path='/index' component={Index} />
                         <Route path='/register' component={Register} />
                         <Route path="/attendancedetail/:id" component={AttendanceDetail} />
