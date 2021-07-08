@@ -71,18 +71,20 @@ export class StudentQuiz extends Component {
                   {Object.keys(this.state.data.attempted_quizzes).map((val, i, arr) => {
 
 
-                    var ans = "No";
+                    var ans = "fas fa-times";
+                    var color="red"
                     if (this.state.data.attempted_quizzes[val].is_correct) {
-                      ans = "Yes";
+                      ans =  " fas fa-check"
+                      color="green"
                     }
 
                     return (
                       <div>
 
-                        <div className=" container attendancecardly">
-                          <h3>Held At: {moment(this.state.data.attempted_quizzes[val].quiz.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
-                          <h3>Question: {this.state.data.attempted_quizzes[val].quiz.question} </h3>
-                          <h4>Options
+                        <div className=" container studentquizcardly">
+                          <h6>Held At: {moment(this.state.data.attempted_quizzes[val].quiz.created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} <i className={ans} style={{fontSize:"40px", color:color}} ></i></h6>
+                          <h4>Question: {this.state.data.attempted_quizzes[val].quiz.question} </h4>
+                          <h4>
                             <ul>
                               <li>Option a:- {this.state.data.attempted_quizzes[val].quiz.option_a}</li>
                               <li>Option b:- {this.state.data.attempted_quizzes[val].quiz.option_b}</li>
@@ -90,9 +92,9 @@ export class StudentQuiz extends Component {
                               <li>Option d:- {this.state.data.attempted_quizzes[val].quiz.option_d}</li>
                             </ul>
                           </h4>
-                          <h3>Correct Answer: {this.state.data.attempted_quizzes[val].quiz.answer} </h3>
-                          <h3>My Answer: {this.state.data.attempted_quizzes[val].answer}</h3>
-                          <h3>Am I correct? {ans}</h3>
+                          <h4>Correct Answer: {this.state.data.attempted_quizzes[val].quiz.answer} </h4>
+                          <h4>My Answer: {this.state.data.attempted_quizzes[val].answer} </h4>
+                          
                         </div>
                       </div>
                     );
@@ -116,18 +118,18 @@ export class StudentQuiz extends Component {
                       return (
                         <div>
 
-                          <div className=" container attendancecardly">
-                            <h3>Held At: {moment(this.state.data.missed_quizzes[val].created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h3>
-                            <h3>Question: {this.state.data.missed_quizzes[val].question} </h3>
-                            <h4>Options
+                          <div className=" container studentquizcardly ">
+                            <h6>Held At: {moment(this.state.data.missed_quizzes[val].created_at).format("dddd, MMMM Do YYYY, h:mm:ss a")} </h6>
+                            <h4>Question: {this.state.data.missed_quizzes[val].question} </h4>
+                            <h4>
                               <ul>
                                 <li>Option a:- {this.state.data.missed_quizzes[val].option_a}</li>
                                 <li>Option b:- {this.state.data.missed_quizzes[val].option_b}</li>
                                 <li>Option c:- {this.state.data.missed_quizzes[val].option_c}</li>
                                 <li>Option d:- {this.state.data.missed_quizzes[val].option_d}</li>
                               </ul>
-                            </h4>
-                            <h3>Correct Answer: {this.state.data.missed_quizzes[val].answer} </h3>
+                              </h4>
+                            <h4>Correct Answer: {this.state.data.missed_quizzes[val].answer} </h4>
 
                           </div>
                         </div>

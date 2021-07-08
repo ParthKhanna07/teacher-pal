@@ -32,22 +32,30 @@ export class join extends Component {
       .post(url, bodyFormData, { headers })
       .then((result) => {
         console.log(result.data);
+        
 
       })
       .catch((error) => {
         console.log(error);
         console.log("login first");
         this.setState({ redirect: true });
+       
 
       });
 
   }
-  renderRedirect = () => {
-    if (this.state.redirect)
-      return <Redirect to="/" />;
-  };
+
   render() {
     //console.log(this.props);
+    if(this.state.redirect){
+      this.setState({ redirect:false});
+      return (
+        <div>
+          <h1>Please Login/Register first</h1>
+        </div>
+      );
+    }
+    else {
 
     return (
       <div>
@@ -55,9 +63,10 @@ export class join extends Component {
           <h1>You are added to batch:- {this.props.match.params.id}</h1>
         </div>
 
-        {this.renderRedirect()}
+        
       </div>
     );
+    }
   }
 }
 

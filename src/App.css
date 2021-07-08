@@ -65,7 +65,14 @@
   }
 
   .quizlistcardly{
-    width: 80%;
+    text-align: left;
+width: 90%;
+
+
+border-radius: 15px;
+margin-top: 10px;
+
+    
     height: 100%;
     border: 2px solid rgba(157, 255, 0, 0.404);
     border-radius: 15px;
@@ -169,3 +176,34 @@
 
 
 
+.studentquizcardly{
+  text-align: left;
+width: 80%;
+height: 110%;
+border: 2px solid rgb(223, 243, 149);
+border-radius: 15px;
+margin-top: 10px;
+background-color:rgba(236, 252, 9, 0.336);
+}
+
+li {
+  float: left;
+  margin-right:100px;
+  overflow-wrap: break-word;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+h4{
+  overflow-wrap: break-word;
+}
+
+i{
+ 
+  float:right;
+}

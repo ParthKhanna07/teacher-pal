@@ -72,16 +72,16 @@ export class Quizdetail extends Component {
               
               <div className=" container quizlistcardly">
                
-                <h3>Question: {val.question}</h3>
-                <h3>Options:
+                <h4>Question: {val.question}</h4>
+                <h4>
                   <ul>
                     <li>Option a:- {val.option_a}</li>
                     <li>Option b:- {val.option_b}</li>
                     <li>Option c:- {val.option_c}</li>
                     <li>Option d:- {val.option_d}</li>
                   </ul>
-                </h3>
-                <h3>Correct Answer: {val.answer}</h3>
+                </h4>
+                <h4>Correct Answer: {val.answer}</h4>
 
               </div>
 
@@ -92,14 +92,18 @@ export class Quizdetail extends Component {
           {this.state.nodata ? <div>No student took the quiz</div> : <div>
             {Object.keys(this.state.student_response).map((val, i, arr) => {
               var ans = "Wrong";
+              var classs = " fas fa-times";
+              var color="red"
               if (this.state.student_response[val].is_correct) {
                 ans = "Right";
+                classs = " fas fa-check"
+                color="green"
               }
               else if (this.state.student_response[val].is_correct == null) ans = "Not Answered"
               return (
 
                 <div className=" container attendancecardly">
-                  <h3>{val}: {ans} </h3>
+                  <h3>{val}: {ans} <i className={classs} style={{fontSize:"40px", color:color}} ></i></h3>
 
                 </div>
               );

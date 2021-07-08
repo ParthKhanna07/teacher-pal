@@ -9,7 +9,7 @@ export default class Login extends Component {
     password: "",
     redirect: false,
     authError: false,
-    isLoading: false,
+    isLoggedin: false,
     location: {},
   };
 
@@ -44,21 +44,25 @@ export default class Login extends Component {
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("role", result.data.role);
         console.log(localStorage.getItem("role"));
-        this.setState({ redirect: true, isLoading: false });
+        this.setState({ redirect: true, isLoggedin: true });
         localStorage.setItem("isLoggedIn", true);
+        
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ authError: true, isLoading: false });
+        this.setState({ authError: true, isLoggedin: false });
       });
 
   };
 
 
   renderRedirect = () => {
-    if (this.state.redirect) {
+  
+    if (this.state.redirect ) {
+   
       if (localStorage.getItem("role") == "is_teacher")
         return <Redirect to="/teacherhome" />;
+      
       else return <Redirect to="/studenthome" />;
 
     }
@@ -67,6 +71,7 @@ export default class Login extends Component {
 
   render() {
     const isLoading = this.state.isLoading;
+    
     return (
       <div className="container">
         <TitleComponent title="React CRUD Login "></TitleComponent>
