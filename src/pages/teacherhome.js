@@ -55,6 +55,7 @@ export class TeacherHome extends Component {
       <div>
 
         <div className="container">
+          {!localStorage.getItem('isLoggedIn')?<div><h1>Please Login First</h1></div>:
           <div className="card card-login mx-auto mt-5" style={{ width: '250px' }}>
 
 
@@ -67,6 +68,7 @@ export class TeacherHome extends Component {
 
 
           </div>
+  }
           {this.state.data.map((val) => {
             return (
 

@@ -5,6 +5,15 @@ export class start extends Component {
     user: "",
   };
 
+  componentDidMount(){
+    if(localStorage.getItem("isLoggedIn")){
+      if(localStorage.getItem("role")=="is_student"){
+        
+        this.props.history.push("/studenthome");
+      }
+      else this.props.history.push("/teacherhome");
+    }
+  }
   handleSubmitStudent = () => {
     localStorage.setItem("user", "is_student");
     this.setState({ user: "is_student" });

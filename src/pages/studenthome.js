@@ -56,7 +56,7 @@ export class StudentHome extends Component {
 
         <div className="container">
           
-          {this.state.data.length==0?<div><h1>You Are Not Enrolled In Any Batch </h1></div>:this.state.data.map((val) => {
+          {this.state.data.length==0?(localStorage.getItem('isLoggedIn')?<div><h1>You Are Not Enrolled In Any Batch </h1></div>:<div><h1>Please Login First </h1></div>):this.state.data.map((val) => {
             
             return (
 

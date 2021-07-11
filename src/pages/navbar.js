@@ -25,6 +25,7 @@ export class Navbar extends Component {
             }
         };
         localStorage.removeItem('token');
+        localStorage.removeItem('isLoggedIn');
 
 
     }
