@@ -20,6 +20,7 @@ export default class Register extends Component {
   handleEmailChange = (event) => {
     console.log(this.state.role);
     this.setState({ email: event.target.value });
+    this.setState({ username: event.target.value });
   };
   handlePwdChange = (event) => {
     this.setState({ password: event.target.value });
@@ -49,7 +50,7 @@ export default class Register extends Component {
       .then((result) => {
         this.setState({ isLoading: false });
         if (result.data.status !== "fail") {
-          this.setState({ redirect: true, authError: true });
+          this.setState({ redirect: true, authError: false });
         } else {
           this.setState({ redirect: false, authError: true });
         }
@@ -74,7 +75,7 @@ export default class Register extends Component {
           <div className="card-header colour-green">Register</div>
           <div className="card-body">
             <form onSubmit={this.handleSubmit}>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <div className="form-label-group">
                   <input
                     type="text"
@@ -87,7 +88,7 @@ export default class Register extends Component {
                   />
                   <label htmlFor="inputUsername">Username</label>
                 </div>
-              </div>
+              </div> */}
               <div className="form-group">
                 <div className="form-label-group">
                   <input
@@ -120,7 +121,7 @@ export default class Register extends Component {
                   />
                   <label htmlFor="inputEmail">Email address</label>
                   <div className="invalid-feedback">
-                    Please provide a valid Email. or Email Exis
+                    Please provide a valid Email. or Email Exist
                   </div>
                 </div>
               </div>

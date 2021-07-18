@@ -13,7 +13,7 @@ export class Batch extends Component {
 
   copyToClipboard = (e) => {
     var textField = document.createElement('textarea')
-    textField.innerText = 'http://localhost:3000/join/' + this.props.match.params.id
+    textField.innerText = 'http://localhost:3006/join/' + this.props.match.params.id
     document.body.appendChild(textField)
     textField.select()
     document.execCommand('copy')
@@ -73,7 +73,7 @@ export class Batch extends Component {
           <h3>Invite Students to the batch </h3>
 
 
-          <button title="click to copy" style={{ width: '60%' }} className="btn  btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3000/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
+          <button title="click to copy" style={{ width: '60%' }} className="btn  btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3006/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
         
 
 
