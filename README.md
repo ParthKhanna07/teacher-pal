@@ -7,7 +7,7 @@
 3. npm start
 
 ```
-# Backend Code
+### Backend Code
 https://github.com/sahilss1499/teacherpal-backend
 
 config.json file is not added as all the URL paths are hard coded.
