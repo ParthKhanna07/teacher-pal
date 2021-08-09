@@ -1,3 +1,10 @@
+## [TeacherPal](https://www.youtube.com/watch?v=KJj-FI74BFM)
+An Application used to share and find resources posted by college students among different branches and courses. Built with React, Python, HTML and CSS.
+
+
+## Project Status
+Running. Users can signup/login through homepage and choose their likeable branches and courses then find and share resources. Users can change their Profile details in profile section (Coloured icon in Navbar) and can also see their Posted, liked posts and Also their subscribed courses. 
+
 ## How to setup project
 ``` 
 1. git clone https://github.com/ParthKhanna07/teacher-pal.git
@@ -12,14 +19,11 @@ PS:- The localhost:3000 need to be changed with localhost:PORT the PORT on which
 
 
 ```
-### Backend Code
-https://github.com/sahilss1499/teacherpal-backend
-
 config.json file is not added as all the URL paths are hard coded.
 Please change the URLs according to your frontend and backend hosts URLs.
 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## [Backend Repository](https://github.com/sahilss1499/teacherpal-backend)
+## [Presentation](https://docs.google.com/presentation/d/10PAzZXnm0BhfO8k0iW3gdFe0V_lNlGciSLO6_43njm4/edit?usp=sharing)
 
 
