@@ -1,5 +1,6 @@
 ## [TeacherPal](https://www.youtube.com/watch?v=KJj-FI74BFM)
-An Application used to share and find resources posted by college students among different branches and courses. Built with React, Python, HTML and CSS.
+An Application along with a chrome extension from which the teachers can manage students in realtime in an online class being taken on Google Meet. The Application is used to access the attendance and quiz details for both Teacher as well as Student. 
+
 
 
 ## Project Status
