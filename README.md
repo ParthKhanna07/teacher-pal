@@ -3,9 +3,6 @@ An Application along with a chrome extension from which the teachers can manage 
 
 
 
-## Project Status
-Running. Users can signup/login through homepage and choose their likeable branches and courses then find and share resources. Users can change their Profile details in profile section (Coloured icon in Navbar) and can also see their Posted, liked posts and Also their subscribed courses. 
-
 ## How to setup project
 ``` 
 1. git clone https://github.com/ParthKhanna07/teacher-pal.git
