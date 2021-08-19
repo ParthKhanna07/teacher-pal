@@ -25,7 +25,7 @@ Please change the URLs according to your frontend and backend hosts URLs.
 - [https://github.com/ApoorvaRajBhadani/teacherpal-host](https://github.com/ApoorvaRajBhadani/teacherpal-host) - Extension for Teachers
 - [https://github.com/ApoorvaRajBhadani/teacherpal-attendee](https://github.com/ApoorvaRajBhadani/teacherpal-attendee) - Extension for Students
 - [https://github.com/ApoorvaRajBhadani/teacherpal-pushserver](https://github.com/ApoorvaRajBhadani/teacherpal-pushserver) - Push notification server
-- [https://github.com/sahilss1499/teacherpal-backend] (https://github.com/sahilss1499/teacherpal-backend) - Python Backend
+- [https://github.com/sahilss1499/teacherpal-backend](https://github.com/sahilss1499/teacherpal-backend) - Python Backend
 
 ## [Presentation](https://docs.google.com/presentation/d/10PAzZXnm0BhfO8k0iW3gdFe0V_lNlGciSLO6_43njm4/edit?usp=sharing)
 
