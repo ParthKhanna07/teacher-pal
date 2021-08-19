@@ -25,7 +25,7 @@ Please change the URLs according to your frontend and backend hosts URLs.
 
 ## Chrome Extension Repositories
 ```
-1. [https://github.com/ApoorvaRajBhadani/teacherpal-pushserver]
+1. https://github.com/ApoorvaRajBhadani/teacherpal-pushserver
 2. https://github.com/ApoorvaRajBhadani/teacherpal-attendee
 3. https://github.com/ApoorvaRajBhadani/teacherpal-host
 
