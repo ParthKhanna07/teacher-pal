@@ -24,12 +24,10 @@ Please change the URLs according to your frontend and backend hosts URLs.
 ## [Backend Repository](https://github.com/sahilss1499/teacherpal-backend)
 
 ## Chrome Extension Repositories
-```
-1. https://github.com/ApoorvaRajBhadani/teacherpal-pushserver
-2. https://github.com/ApoorvaRajBhadani/teacherpal-attendee
-3. https://github.com/ApoorvaRajBhadani/teacherpal-host
+- [https://github.com/ApoorvaRajBhadani/teacherpal-host](https://github.com/ApoorvaRajBhadani/teacherpal-host) - Extension for Teachers
+- [https://github.com/ApoorvaRajBhadani/teacherpal-attendee](https://github.com/ApoorvaRajBhadani/teacherpal-attendee) - Extension for Students
+- [https://github.com/ApoorvaRajBhadani/teacherpal-pushserver](https://github.com/ApoorvaRajBhadani/teacherpal-pushserver) - Push notification server
 
-````
 
 ## [Presentation](https://docs.google.com/presentation/d/10PAzZXnm0BhfO8k0iW3gdFe0V_lNlGciSLO6_43njm4/edit?usp=sharing)
 
