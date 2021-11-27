@@ -4,6 +4,8 @@ import Calendar from 'react-calendar';
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
 import 'react-calendar/dist/Calendar.css';
+import configData from './config.json'
+
 
 export class AttendanceDetail extends Component {
     state = {
@@ -31,8 +33,8 @@ export class AttendanceDetail extends Component {
         // Typical usage (don't forget to compare props):
         //console.log(this.props);
         //console.log(localStorage.getItem("token"));
-        const url = "http://localhost:8000/api/attendance-detail/" + this.props.match.params.id;
-        console.log(url);
+        const url = `${configData.SERVER_URL}attendance-detail/` + this.props.match.params.id;
+        //console.log(url);
         const date = this.state.date;
         //console.log(typeof(date));
 
@@ -40,8 +42,8 @@ export class AttendanceDetail extends Component {
         const localDateString = date.toLocaleDateString('En-en');
         //console.log(localDateString);
         var formatted = moment(date).format('YYYY-MM-DD');
-        console.log(typeof (formatted))
-        console.log(formatted);
+        //console.log(typeof (formatted))
+        //console.log(formatted);
 
         // const dt=new Date(formatted);
         // console.log(dt);
@@ -68,14 +70,14 @@ export class AttendanceDetail extends Component {
                 console.log(result);
                 this.setState({ nodata: false });
                 this.setState({ data: result.data });
-                console.log(this.state.data)
-                console.log(result.data["total_attendance_requests"]);
+                // console.log(this.state.data)
+                // console.log(result.data["total_attendance_requests"]);
             })
             .catch((error) => {
                 if (error.response) {
                     // The request was made and the server responded with a status code
                     // that falls out of the range of 2xx
-                    console.log(error.response.data);
+                    // console.log(error.response.data);
                     this.setState({ nodata: true });
                     // console.log(error.response.status);
                     // console.log(error.response.headers);
@@ -83,12 +85,12 @@ export class AttendanceDetail extends Component {
                     // The request was made but no response was received
                     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
                     // http.ClientRequest in node.js
-                    console.log(error.request);
+                    // console.log(error.request);
                 } else {
                     // Something happened in setting up the request that triggered an Error
-                    console.log('Error', error.message);
+                    // console.log('Error', error.message);
                 }
-                console.log(error.config);
+                //console.log(error.config);
             });
         //window.location.reload();
     };

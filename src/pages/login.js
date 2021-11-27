@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import TitleComponent from "./title";
+import configData from './config.json'
 
 export default class Login extends Component {
   state = {
@@ -29,7 +30,7 @@ export default class Login extends Component {
         "Content-Type": "application/json",
       },
     };
-    const url = "http://localhost:8000/api/login";
+    const url = `${configData.SERVER_URL}login`;
 
     const email = this.state.email;
     const password = this.state.password;
@@ -43,13 +44,13 @@ export default class Login extends Component {
         localStorage.setItem("userid", result.data.id);
         localStorage.setItem("token", result.data.token);
         localStorage.setItem("role", result.data.role);
-        console.log(localStorage.getItem("role"));
+        //console.log(localStorage.getItem("role"));
         this.setState({ redirect: true, isLoggedin: true });
         localStorage.setItem("isLoggedIn", true);
         
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
         this.setState({ authError: true, isLoggedin: false });
       });
 

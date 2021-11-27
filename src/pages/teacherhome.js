@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
+import configData from './config.json'
 
 export class TeacherHome extends Component {
   state = {
@@ -29,20 +30,20 @@ export class TeacherHome extends Component {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     };
     // Typical usage (don't forget to compare props):
-    console.log(this.props);
+   // console.log(this.props);
     const url =
-      "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
-    console.log(url);
+    `${configData.SERVER_URL}batch?created_by=` + this.state.created_by;
+    //console.log(url);
 
     axios
       .get(url, { headers })
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         this.setState({ data: result.data });
 
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   };
 

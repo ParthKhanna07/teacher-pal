@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import axios from "axios";
 import moment from 'moment';
 import { Container, Row, Col } from 'react-bootstrap';
+import configData from './config.json'
+
+
 export class StudentQuiz extends Component {
   state = {
     batch: "",
@@ -26,22 +29,22 @@ export class StudentQuiz extends Component {
     // Typical usage (don't forget to compare props):
     console.log(this.props);
     const url =
-      "http://localhost:8000/api/student-quiz-list/" + this.props.match.params.id;
-    console.log(url);
+    `${configData.SERVER_URL}student-quiz-list/` + this.props.match.params.id;
+    //console.log(url);
 
 
     axios
       .get(url, { headers })
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         this.setState({ data: result.data });
-        console.log(this.state.data.attempted_quizzes.length)
+        //console.log(this.state.data.attempted_quizzes.length)
         this.setState({ attempted_quizzes: this.state.data.attempted_quizzes.length });
         this.setState({ missed_quizzes: this.state.data.missed_quizzes.length });
 
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
 
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import configData from './config.json'
 
 export class Allthings extends Component {
 

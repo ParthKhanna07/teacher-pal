@@ -1,5 +1,6 @@
 import Helmet from "react-helmet";
 import React from "react";
+import configData from './config.json'
 
 const TitleComponent = ({title}) => {
     var defaultTitle = '⚛️ app';

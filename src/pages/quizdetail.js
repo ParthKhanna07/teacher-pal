@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
+import configData from './config.json'
 
 export class Quizdetail extends Component {
   state = {
@@ -20,36 +21,36 @@ export class Quizdetail extends Component {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     };
     // Typical usage (don't forget to compare props):
-    console.log(this.props);
+    //console.log(this.props);
     const url =
-      "http://localhost:8000/api/quiz?created_by=" + this.state.created_by + "&batch=" + localStorage.getItem('isbatch');
-    console.log(url);
+      `${configData.SERVER_URL}quiz?created_by=` + this.state.created_by + "&batch=" + localStorage.getItem('isbatch');
+   // console.log(url);
 
 
     axios
       .get(url, { headers })
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         this.setState({ data: result.data });
 
 
       })
       .catch((error) => {
-        console.log(error);
+       // console.log(error);
       });
 
-    const url2 = "http://localhost:8000/api/quiz-detail/" + localStorage.getItem('quizid');
+    const url2 = `${configData.SERVER_URL}quiz-detail/` + localStorage.getItem('quizid');
     axios
       .get(url2, { headers })
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         this.setState({ student_response: result.data });
-        console.log(this.state.student_response["student1@gmail.com"].is_correct)
+        //console.log(this.state.student_response["student1@gmail.com"].is_correct)
         this.setState({ nostudentdata: false });
 
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   }
   render() {

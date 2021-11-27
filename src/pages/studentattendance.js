@@ -4,6 +4,7 @@ import Calendar from 'react-calendar';
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
 import 'react-calendar/dist/Calendar.css';
+import configData from './config.json'
 
 export class StudentAttendance extends Component {
     state = {
@@ -16,23 +17,20 @@ export class StudentAttendance extends Component {
     }
 
 
-
-
-
     componentDidMount() {
-        console.log(localStorage.getItem("role"));
-        console.log(localStorage.getItem("userid"));
+        // console.log(localStorage.getItem("role"));
+        // console.log(localStorage.getItem("userid"));
 
         const headers = {
             "Content-Type": "application/json",
             Accept: "application/json",
             Authorization: `JWT ${localStorage.getItem("token")}`,
         };
-        // Typical usage (don't forget to compare props):
+       
         //console.log(this.props);
         //console.log(localStorage.getItem("token"));
-        const url = "http://localhost:8000/api/student-attendance-list/" + this.props.match.params.id;
-        console.log(url);
+        const url = `${configData.SERVER_URL}student-attendance-list/` + this.props.match.params.id;
+  //console.log(url);
 
         //console.log(typeof(date));
 
@@ -44,18 +42,18 @@ export class StudentAttendance extends Component {
         axios
             .get(url, { headers })
             .then((result) => {
-                console.log(result);
+                //console.log(result);
                 this.setState({ nodata: false });
-                console.log(result.data);
+                //console.log(result.data);
                 this.setState({ data: result.data });
-                console.log(this.state.data)
-                console.log(result.data["total_attendance_requests"]);
+                // console.log(this.state.data)
+                // console.log(result.data["total_attendance_requests"]);
             })
             .catch((error) => {
                 if (error.response) {
                     // The request was made and the server responded with a status code
                     // that falls out of the range of 2xx
-                    console.log(error.response.data);
+                    //console.log(error.response.data);
                     this.setState({ nodata: true });
                     // console.log(error.response.status);
                     // console.log(error.response.headers);
@@ -63,12 +61,12 @@ export class StudentAttendance extends Component {
                     // The request was made but no response was received
                     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
                     // http.ClientRequest in node.js
-                    console.log(error.request);
+                    //console.log(error.request);
                 } else {
                     // Something happened in setting up the request that triggered an Error
-                    console.log('Error', error.message);
+                   // console.log('Error', error.message);
                 }
-                console.log(error.config);
+                //console.log(error.config);
             });
         //window.location.reload();
     };

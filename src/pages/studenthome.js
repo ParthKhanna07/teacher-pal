@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
+import configData from './config.json'
 
 export class StudentHome extends Component {
   state = {
@@ -29,20 +30,20 @@ export class StudentHome extends Component {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     };
     // Typical usage (don't forget to compare props):
-    console.log(this.props);
+   // console.log(this.props);
     const url =
-      "http://localhost:8000/api/student-batch-list";
+    `${configData.SERVER_URL}student-batch-list`;
     console.log(url);
 
     axios
       .get(url, { headers })
       .then((result) => {
-        console.log(result.data);
+       // console.log(result.data);
         this.setState({ data: result.data });
 
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
       });
   };
 

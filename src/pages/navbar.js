@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import configData from './config.json'
+
 export class Navbar extends Component {
     constructor(props) {
         super(props);

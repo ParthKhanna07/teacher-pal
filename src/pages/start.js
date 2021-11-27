@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom';
+import configData from './config.json'
+
 export class start extends Component {
   state = {
     user: "",

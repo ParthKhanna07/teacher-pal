@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+import configData from './config.json'
+
 export class join extends Component {
   state = {
     redirect: false
@@ -8,7 +10,7 @@ export class join extends Component {
 
   componentDidMount() {
     if (localStorage.getItem('userid') == null) {
-      console.log("login first");
+      //console.log("login first");
       this.setState({ redirect: true });
     }
     const batch = this.props.match.params.id;
@@ -22,8 +24,8 @@ export class join extends Component {
     };
     // Typical usage (don't forget to compare props):
 
-    const url = "http://localhost:8000/api/batch-students/" + batchid;
-    console.log(url);
+    const url = `${configData.SERVER_URL}batch-students/` + batchid;
+    //console.log(url);
     let bodyFormData = new FormData();
 
     bodyFormData.set("batch", batchid);
@@ -31,13 +33,13 @@ export class join extends Component {
     axios
       .post(url, bodyFormData, { headers })
       .then((result) => {
-        console.log(result.data);
+       // console.log(result.data);
         
 
       })
       .catch((error) => {
-        console.log(error);
-        console.log("login first");
+        // console.log(error);
+        // console.log("login first");
         this.setState({ redirect: true });
        
 

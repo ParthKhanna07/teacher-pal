@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
+import configData from './config.json'
 
 export default class Register extends Component {
   state = {
@@ -32,7 +33,7 @@ export default class Register extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ isLoading: true });
-    const url = "http://localhost:8000/api/signup";
+    const url = `${configData.SERVER_URL}signup`;
     const email = this.state.email;
     const role = this.state.role;
     const password = this.state.password;
@@ -75,20 +76,7 @@ export default class Register extends Component {
           <div className="card-header colour-green">Register</div>
           <div className="card-body">
             <form onSubmit={this.handleSubmit}>
-              {/* <div className="form-group">
-                <div className="form-label-group">
-                  <input
-                    type="text"
-                    id="inputUsername"
-                    className="form-control"
-                    placeholder="Username"
-                    name="username"
-                    onChange={this.handleUsernameChange}
-                    required
-                  />
-                  <label htmlFor="inputUsername">Username</label>
-                </div>
-              </div> */}
+            
               <div className="form-group">
                 <div className="form-label-group">
                   <input

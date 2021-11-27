@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import configData from './config.json'
+
 
 export class Batch extends Component {
   state = {
@@ -13,7 +15,7 @@ export class Batch extends Component {
 
   copyToClipboard = (e) => {
     var textField = document.createElement('textarea')
-    textField.innerText = 'http://localhost:3006/join/' + this.props.match.params.id
+    textField.innerText = 'http://localhost:3000/join/' + this.props.match.params.id
     document.body.appendChild(textField)
     textField.select()
     document.execCommand('copy')
@@ -31,8 +33,8 @@ export class Batch extends Component {
     const student = localStorage.getItem("userid");
     const batchid = parseInt(batch);
 
-    const url = "http://localhost:8000/api/batch-students/" + batchid;
-    console.log(url);
+    const url = `${configData.SERVER_URL}batch-students/` + batchid;
+    //console.log(url);
     let bodyFormData = new FormData();
 
     bodyFormData.set("batch", batchid);
@@ -40,13 +42,13 @@ export class Batch extends Component {
     axios
       .get(url, { headers })
       .then((result) => {
-        console.log(result.data);
+        //console.log(result.data);
         this.setState({ data: result.data })
 
 
       })
       .catch((error) => {
-        console.log(error);
+        //console.log(error);
 
       });
 
@@ -73,7 +75,7 @@ export class Batch extends Component {
           <h3>Invite Students to the batch </h3>
 
 
-          <button title="click to copy" style={{ width: '60%' }} className="btn  btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3006/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
+          <button title="click to copy" style={{ width: '60%' }} className="btn  btn-outline-success" onClick={this.copyToClipboard}><h5>http://localhost:3000/join/{this.props.match.params.id}</h5></button> {this.state.copySuccess}
         
 
 

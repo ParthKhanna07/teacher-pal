@@ -3,6 +3,7 @@ import Header from "../elements/header";
 import Sidebar from "../elements/sidebar";
 import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
+import configData from './config.json'
 
 export default class Index extends Component {
     state = {

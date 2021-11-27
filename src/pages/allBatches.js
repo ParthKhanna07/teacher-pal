@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import moment from 'moment';
+import configData from './config.json'
 
 export class AllBatches extends Component {
   state = {
@@ -37,7 +38,7 @@ export class AllBatches extends Component {
     // Typical usage (don't forget to compare props):
     console.log(this.props);
     const url =
-      "http://localhost:8000/api/batch?created_by=" + this.state.created_by;
+      `${configData.SERVER_URL}batch?created_by=` + this.state.created_by;
     console.log(url);
 
     axios
